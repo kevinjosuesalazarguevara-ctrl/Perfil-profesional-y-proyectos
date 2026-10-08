@@ -24,15 +24,17 @@ Antes de cualquier cambio visual (rediseño, nueva sección, animaciones), carga
 
 ## Identidad visual
 
-- Design Read vigente: portafolio personal para recruiters y clientes empresariales de soluciones Microsoft, sobrio y confiable, CSS nativo + Geist + movimiento contenido. Dials: VARIANCE 6, MOTION 5, DENSITY 4.
-- Acento: `#9c1450` (claro) / `#e0558f` (oscuro). Es el mismo color del CV. Neutros fríos (zinc).
-- Tipografías: Geist (todo el texto) y Geist Mono (fechas, cifras y códigos de certificación), autoalojadas en `assets/fonts/` (licencia OFL). No usar Fraunces ni Inter.
-- Íconos: Phosphor regular, autoalojado en `assets/phosphor/`. `style.css` incluye solo los íconos en uso; al agregar uno nuevo, copiar su regla desde el paquete `@phosphor-icons/web` (repo github.com/phosphor-icons/web, `src/regular/style.css`).
-- Forma: elementos interactivos en pill (999px); paneles, tarjetas y fotos con radio 14px.
+- Referencia de estructura: https://je4nca.github.io/personal-portfolio/ (hero con foto, ticker, sobre mí con cifras, qué hago, experiencia con logos, credenciales, proyectos, contacto, selector ES/EN).
+- Design Read vigente: portafolio personal para recruiters y clientes empresariales de soluciones Microsoft, tema único negro y verde, lenguaje técnico sobrio, movimiento ligado al scroll. Dials: VARIANCE 6, MOTION 6, DENSITY 4.
+- Paleta (tema oscuro único, a propósito): fondo `#07090a`, superficies `#0f1513` / `#141c19`, líneas `#1d2723`, texto `#e4ece7`, secundario `#8b9a92`, verde `#4fd98f` (texto sobre verde: `#05150d`), verde profundo `#1f8a57`.
+- Fondo: rejilla de puntos fija con un "escáner" verde que baja según el scroll (`animation-timeline: scroll(root)`, con animación lenta de respaldo). La capa `.bg` va en `z-index: 0` y el contenido en `z-index: 1`.
+- Tipografías: Geist y Geist Mono autoalojadas en `assets/fonts/` (OFL). No usar Fraunces ni Inter.
+- Íconos: Phosphor regular en `assets/phosphor/`; `style.css` incluye solo los íconos en uso (regenerar al agregar uno).
+- Logos de empresas en `assets/logos/`: Accenture y Anthropic vienen de Simple Icons (CC0) y van inline como SVG. Tek Experts y Concentrix se cargan desde `tek-experts.png` y `concentrix.png` si existen; si no, se muestra el nombre. No dibujar logos a mano.
+- Bilingüe: cada texto visible lleva `<span class="es">` y `<span class="en">`; al agregar contenido, escribir ambos idiomas.
+- Forma: interactivos en pill (999px), paneles 16px, recuadros de logo 10px.
 - Foto de perfil en `assets/kevin.webp` (4:5). Si no existe, el hero muestra las iniciales.
-- Colores definidos como variables en `:root`, con versión para `prefers-color-scheme`.
-- Todo el CSS y JS va dentro de `index.html`; fuentes e íconos se sirven desde `assets/`.
-- Sin guiones largos (—) ni medios (–) en el texto visible; usar guion normal.
+- Sin guiones largos (—) ni medios (–) en el texto visible.
 
 ## Animación con herramientas gratuitas
 

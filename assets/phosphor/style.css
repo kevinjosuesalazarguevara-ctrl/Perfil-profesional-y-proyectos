@@ -33,11 +33,8 @@
 .ph.ph-arrow-down-right:before {
   content: "\e042";
 }
-.ph.ph-arrow-right:before {
-  content: "\e06c";
-}
-.ph.ph-chart-line-up:before {
-  content: "\e156";
+.ph.ph-certificate:before {
+  content: "\e766";
 }
 .ph.ph-flow-arrow:before {
   content: "\e6ec";
@@ -51,6 +48,9 @@
 .ph.ph-linkedin-logo:before {
   content: "\e2ee";
 }
+.ph.ph-lock-key:before {
+  content: "\e2fe";
+}
 .ph.ph-path:before {
   content: "\e39c";
 }
@@ -62,7 +62,4 @@
 }
 .ph.ph-sparkle:before {
   content: "\e6a2";
-}
-.ph.ph-timer:before {
-  content: "\e492";
 }

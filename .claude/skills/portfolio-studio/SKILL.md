@@ -24,10 +24,15 @@ Antes de cualquier cambio visual (rediseño, nueva sección, animaciones), carga
 
 ## Identidad visual
 
-- Acento: `#9c1450` (claro) / `#d63a7c` (oscuro). Es el mismo color del CV.
-- Tipografías: Fraunces (títulos) e Inter (texto), desde Google Fonts.
+- Design Read vigente: portafolio personal para recruiters y clientes empresariales de soluciones Microsoft, sobrio y confiable, CSS nativo + Geist + movimiento contenido. Dials: VARIANCE 6, MOTION 5, DENSITY 4.
+- Acento: `#9c1450` (claro) / `#e0558f` (oscuro). Es el mismo color del CV. Neutros fríos (zinc).
+- Tipografías: Geist (todo el texto) y Geist Mono (fechas, cifras y códigos de certificación), autoalojadas en `assets/fonts/` (licencia OFL). No usar Fraunces ni Inter.
+- Íconos: Phosphor regular, autoalojado en `assets/phosphor/`. `style.css` incluye solo los íconos en uso; al agregar uno nuevo, copiar su regla desde el paquete `@phosphor-icons/web` (repo github.com/phosphor-icons/web, `src/regular/style.css`).
+- Forma: elementos interactivos en pill (999px); paneles, tarjetas y fotos con radio 14px.
+- Foto de perfil en `assets/kevin.webp` (4:5). Si no existe, el hero muestra las iniciales.
 - Colores definidos como variables en `:root`, con versión para `prefers-color-scheme`.
-- Todo el CSS y JS va dentro de `index.html`, salvo librerías por CDN.
+- Todo el CSS y JS va dentro de `index.html`; fuentes e íconos se sirven desde `assets/`.
+- Sin guiones largos (—) ni medios (–) en el texto visible; usar guion normal.
 
 ## Animación con herramientas gratuitas
 

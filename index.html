@@ -3,249 +3,424 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Kevin Salazar Guevara — Microsoft Security & Cloud Consultant</title>
-<meta name="description" content="Portafolio de Kevin Josué Salazar Guevara: consultor de soluciones Microsoft en seguridad, identidad, licenciamiento, Copilot y automatización con Power Platform e IA.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<title>Kevin Salazar Guevara | Microsoft Security & Cloud Consultant</title>
+<meta name="description" content="Kevin Josué Salazar Guevara, consultor de soluciones Microsoft: seguridad e identidad, licenciamiento y Copilot, automatización con Power Platform e IA.">
+<meta property="og:title" content="Kevin Salazar Guevara | Microsoft Security & Cloud Consultant">
+<meta property="og:description" content="Seguridad e identidad, licenciamiento y Copilot, y automatización con Power Platform e IA.">
+<meta property="og:type" content="website">
+<link rel="preload" href="assets/fonts/Geist-Variable.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/phosphor/style.css">
+<script>document.documentElement.classList.add('js');</script>
 <style>
+  /*
+    Design read: portafolio personal para recruiters y clientes empresariales de soluciones Microsoft.
+    Lenguaje sobrio y confiable, CSS nativo + Geist + movimiento contenido.
+    Dials (taste-skill): DESIGN_VARIANCE 6, MOTION_INTENSITY 5, VISUAL_DENSITY 4.
+    Forma: elementos interactivos en pill (999px); paneles y fotos con radio 14px.
+  */
+  @font-face { font-family: Geist; src: url("assets/fonts/Geist-Variable.woff2") format("woff2"); font-weight: 100 900; font-display: swap; }
+  @font-face { font-family: 'Geist Mono'; src: url("assets/fonts/GeistMono-Variable.woff2") format("woff2"); font-weight: 100 900; font-display: swap; }
   :root {
-    --bg: #0f1115; --surface: #171a21; --line: #262a33;
-    --text: #e8e6e3; --muted: #9aa0aa; --accent: #d63a7c; --accent-soft: rgba(214,58,124,.12);
+    --bg: #f6f6f7;
+    --surface: #ffffff;
+    --surface-2: #eeeef0;
+    --line: #e1e1e5;
+    --text: #18181b;
+    --muted: #5b5b66;
+    --accent: #9c1450;
+    --accent-ink: #fdf2f7;
+    --accent-soft: #f6e4ec;
+    --shadow: 0 1px 2px rgba(60, 20, 40, .06), 0 8px 24px -12px rgba(60, 20, 40, .18);
+    --r: 14px;
+    --ease: cubic-bezier(.16, 1, .3, 1);
   }
-  @media (prefers-color-scheme: light) {
-    :root { --bg: #faf8f5; --surface: #ffffff; --line: #e6e1da; --text: #1a1a1a; --muted: #5d6067; --accent: #9c1450; --accent-soft: rgba(156,20,80,.08); }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0f0f12;
+      --surface: #17171b;
+      --surface-2: #1e1e23;
+      --line: #2a2a31;
+      --text: #ececef;
+      --muted: #a1a1ab;
+      --accent: #e0558f;
+      --accent-ink: #1a0a11;
+      --accent-soft: #2a1520;
+      --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 8px 24px -12px rgba(0, 0, 0, .6);
+    }
   }
+
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  html { scroll-behavior: smooth; }
-  body { background: var(--bg); color: var(--text); font: 16px/1.65 Inter, system-ui, sans-serif; }
-  a { color: var(--accent); text-decoration: none; }
-  a:hover { text-decoration: underline; }
-  .wrap { max-width: 980px; margin: 0 auto; padding: 0 20px; }
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+  body { background: var(--bg); color: var(--text); font: 16px/1.6 Geist, system-ui, sans-serif; overflow-x: hidden; }
+  a { color: inherit; }
+  .mono { font-family: 'Geist Mono', ui-monospace, monospace; }
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+  :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 6px; }
 
-  nav { position: sticky; top: 0; z-index: 10; background: color-mix(in srgb, var(--bg) 88%, transparent); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); }
-  nav .wrap { display: flex; justify-content: space-between; align-items: center; height: 58px; gap: 16px; }
-  nav .brand { font-family: Fraunces, serif; font-weight: 700; color: var(--text); font-size: 1.1rem; }
-  nav ul { list-style: none; display: flex; gap: 22px; font-size: .9rem; }
-  nav ul a { color: var(--muted); }
-  nav ul a:hover { color: var(--text); text-decoration: none; }
+  /* Navegación */
+  nav { position: sticky; top: 0; z-index: 20; background: color-mix(in srgb, var(--bg) 85%, transparent); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
+  nav .wrap { height: 64px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+  .brand { font-weight: 600; text-decoration: none; letter-spacing: -.01em; }
+  nav ul { list-style: none; display: flex; gap: 28px; font-size: .92rem; }
+  nav ul a { text-decoration: none; color: var(--muted); transition: color .2s; }
+  nav ul a:hover { color: var(--text); }
 
-  header.hero { padding: 96px 0 72px; }
-  .eyebrow { color: var(--accent); font-weight: 600; font-size: .85rem; letter-spacing: .08em; text-transform: uppercase; }
-  h1 { font-family: Fraunces, serif; font-weight: 700; font-size: clamp(2.4rem, 6vw, 4rem); line-height: 1.05; margin: 14px 0 20px; letter-spacing: -.02em; }
-  .lede { font-size: 1.15rem; color: var(--muted); max-width: 660px; }
-  .chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 28px 0 32px; }
-  .chip { border: 1px solid var(--line); border-radius: 999px; padding: 5px 13px; font-size: .85rem; color: var(--muted); background: var(--surface); }
-  .cta { display: flex; flex-wrap: wrap; gap: 12px; }
-  .btn { display: inline-block; padding: 11px 20px; border-radius: 8px; font-weight: 600; font-size: .95rem; }
-  .btn.primary { background: var(--accent); color: #fff; }
-  .btn.ghost { border: 1px solid var(--line); color: var(--text); }
-  .btn:hover { text-decoration: none; opacity: .9; }
+  /* Botones */
+  .btn { display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; padding: 12px 22px; border-radius: 999px; font-weight: 600; font-size: .95rem; text-decoration: none; transition: transform .2s var(--ease), background .2s, border-color .2s; }
+  .btn:active { transform: scale(.98); }
+  .btn-primary { background: var(--accent); color: #fff; }
+  .btn-primary:hover { background: color-mix(in srgb, var(--accent) 88%, #000); }
+  .btn-ghost { border: 1px solid var(--line); color: var(--text); background: var(--surface); }
+  .btn-ghost:hover { border-color: var(--muted); }
+  @media (prefers-color-scheme: dark) { .btn-primary { color: var(--accent-ink); } }
 
-  section { padding: 64px 0; border-top: 1px solid var(--line); }
-  h2 { font-family: Fraunces, serif; font-size: 1.9rem; font-weight: 700; margin-bottom: 28px; letter-spacing: -.01em; }
-  h2 span { color: var(--accent); }
+  /* Hero: split asimétrico */
+  .hero { padding: 72px 0 64px; min-height: calc(100dvh - 64px); display: flex; align-items: center; }
+  .hero .wrap { display: grid; grid-template-columns: 1.35fr 1fr; gap: 64px; align-items: center; width: 100%; }
+  .role { color: var(--accent); font-weight: 600; font-size: .95rem; margin-bottom: 18px; }
+  h1 { font-size: clamp(2.6rem, 5.6vw, 4.4rem); line-height: 1.02; letter-spacing: -.035em; font-weight: 700; }
+  .lede { font-size: 1.18rem; color: var(--muted); max-width: 34ch; margin: 22px 0 34px; }
+  .actions { display: flex; flex-wrap: wrap; gap: 12px; }
 
-  .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 36px; }
-  .stat { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 20px; }
-  .stat b { display: block; font-family: Fraunces, serif; font-size: 2rem; color: var(--accent); line-height: 1.1; }
-  .stat small { color: var(--muted); font-size: .88rem; }
+  .portrait { position: relative; aspect-ratio: 4 / 5; border-radius: var(--r); background: var(--surface-2); overflow: hidden; box-shadow: var(--shadow); }
+  .portrait::before { content: ""; position: absolute; inset: 0; background: radial-gradient(120% 80% at 80% 10%, var(--accent-soft), transparent 60%); }
+  .portrait .initials { position: absolute; inset: 0; display: grid; place-items: center; font-size: clamp(5rem, 11vw, 8.5rem); font-weight: 700; letter-spacing: -.06em; color: var(--accent); opacity: .9; }
+  .portrait img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .portrait-wrap { position: relative; }
+  .portrait-wrap::after { content: ""; position: absolute; z-index: -1; inset: 18px -18px -18px 18px; border-radius: var(--r); border: 1px solid var(--accent); opacity: .45; }
 
-  .job { display: grid; grid-template-columns: 170px 1fr; gap: 24px; padding: 26px 0; border-bottom: 1px dashed var(--line); }
-  .job:last-child { border-bottom: 0; }
-  .job .when { color: var(--muted); font-size: .9rem; padding-top: 3px; }
-  .job h3 { font-size: 1.1rem; font-weight: 600; }
-  .job .org { color: var(--accent); font-weight: 500; margin-bottom: 10px; }
-  .job ul { padding-left: 18px; color: var(--muted); }
-  .job li { margin: 5px 0; }
-  .job li b { color: var(--text); font-weight: 600; }
+  /* Cifras */
+  .figures { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); background: var(--surface); }
+  .figures .wrap { display: grid; grid-template-columns: repeat(3, 1fr); }
+  .fig { padding: 34px 28px; }
+  .fig + .fig { border-left: 1px solid var(--line); }
+  .fig b { display: block; font-size: 2.6rem; line-height: 1; letter-spacing: -.03em; font-weight: 600; }
+  .fig span { color: var(--muted); font-size: .95rem; display: block; margin-top: 10px; max-width: 26ch; }
 
-  .feature { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 32px; position: relative; overflow: hidden; }
-  .feature::before { content: ""; position: absolute; inset: 0 auto 0 0; width: 4px; background: var(--accent); }
-  .feature .tag { display: inline-block; background: var(--accent-soft); color: var(--accent); border-radius: 6px; padding: 3px 10px; font-size: .8rem; font-weight: 600; }
-  .feature h3 { font-family: Fraunces, serif; font-size: 1.6rem; margin: 12px 0 6px; }
-  .feature > p { color: var(--muted); max-width: 700px; }
-  .grid4 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin: 26px 0; }
-  .card { border: 1px solid var(--line); border-radius: 12px; padding: 18px; background: var(--bg); }
-  .card h4 { font-size: .98rem; margin-bottom: 6px; }
-  .card p { color: var(--muted); font-size: .92rem; }
-  .phases { display: flex; flex-wrap: wrap; gap: 8px; counter-reset: ph; list-style: none; }
-  .phases li { counter-increment: ph; font-size: .88rem; border: 1px solid var(--line); border-radius: 8px; padding: 6px 12px; color: var(--muted); }
-  .phases li::before { content: counter(ph) " · "; color: var(--accent); font-weight: 600; }
+  section { padding: 104px 0; }
+  h2 { font-size: clamp(1.9rem, 3.4vw, 2.6rem); line-height: 1.1; letter-spacing: -.03em; font-weight: 700; max-width: 22ch; }
+  .intro { color: var(--muted); max-width: 60ch; margin-top: 14px; font-size: 1.05rem; }
 
-  .skills { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
-  .skills h3 { font-size: 1rem; margin-bottom: 10px; }
-  .skills .chips { margin: 0; }
+  /* Experiencia: título fijo a la izquierda + línea de tiempo */
+  .xp { display: grid; grid-template-columns: 300px 1fr; gap: 72px; align-items: start; }
+  .xp-head { position: sticky; top: 112px; }
+  .timeline { position: relative; padding-left: 32px; }
+  .timeline::before { content: ""; position: absolute; left: 0; top: 8px; bottom: 8px; width: 2px; background: var(--line); }
+  .timeline .progress { position: absolute; left: 0; top: 8px; width: 2px; height: calc(100% - 16px); background: var(--accent); transform-origin: top; transform: scaleY(1); }
+  .job { position: relative; padding-bottom: 56px; }
+  .job:last-child { padding-bottom: 0; }
+  .job::before { content: ""; position: absolute; left: -38px; top: 7px; width: 14px; height: 14px; border-radius: 50%; background: var(--bg); border: 2px solid var(--accent); }
+  .job .when { font-size: .85rem; color: var(--muted); }
+  .job h3 { font-size: 1.28rem; letter-spacing: -.015em; margin-top: 6px; line-height: 1.3; }
+  .job .org { color: var(--accent); font-weight: 600; margin-top: 2px; }
+  .job p { color: var(--muted); margin-top: 12px; max-width: 62ch; }
+  .wins { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 22px; }
+  .win { background: var(--surface); border: 1px solid var(--line); border-radius: var(--r); padding: 18px 20px; }
+  .win i { color: var(--accent); font-size: 1.35rem; }
+  .win h4 { font-size: 1rem; margin: 8px 0 4px; }
+  .win p { margin: 0; font-size: .93rem; }
 
-  .certs { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
-  .cert { display: flex; gap: 12px; align-items: flex-start; padding: 12px 14px; border: 1px solid var(--line); border-radius: 10px; background: var(--surface); font-size: .93rem; }
-  .cert .st { font-size: .72rem; font-weight: 600; text-transform: uppercase; letter-spacing: .05em; padding: 3px 8px; border-radius: 5px; white-space: nowrap; background: var(--accent-soft); color: var(--accent); }
-  .cert .st.done { background: transparent; border: 1px solid var(--line); color: var(--muted); }
+  /* Proyecto destacado: panel con bento */
+  .project { background: var(--surface); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .project-tag { display: inline-flex; align-items: center; gap: 8px; color: var(--accent); font-weight: 600; font-size: .9rem; margin-bottom: 14px; }
+  .project-tag .live { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); }
+  .bento { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 44px; }
+  .cell { border-radius: var(--r); padding: 28px; border: 1px solid var(--line); min-height: 210px; display: flex; flex-direction: column; justify-content: space-between; gap: 28px; }
+  .cell i { font-size: 1.7rem; }
+  .cell h3 { font-size: 1.2rem; letter-spacing: -.01em; margin-bottom: 8px; }
+  .cell p { font-size: .97rem; color: var(--muted); max-width: 46ch; }
+  .cell.wide { grid-column: span 2; }
+  .cell.solid { background: var(--accent); border-color: transparent; color: #fff; }
+  .cell.solid p { color: rgba(255, 255, 255, .86); }
+  @media (prefers-color-scheme: dark) { .cell.solid { color: var(--accent-ink); } .cell.solid p { color: color-mix(in srgb, var(--accent-ink) 80%, transparent); } }
+  .cell.tint { background: var(--accent-soft); }
+  .cell.tint i { color: var(--accent); }
+  .cell.dots { background-color: var(--bg); background-image: radial-gradient(color-mix(in srgb, var(--accent) 22%, transparent) 1px, transparent 1px); background-size: 16px 16px; }
+  .cell.dots i, .cell.plain i { color: var(--accent); }
+  .cell.plain { background: var(--bg); }
+  .flow { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 8px; margin-top: 36px; }
+  .flow span { padding: 8px 16px; border-radius: 999px; border: 1px solid var(--line); background: var(--bg); font-size: .9rem; font-weight: 500; }
+  .flow i { color: var(--muted); font-size: .95rem; }
 
-  .contact { text-align: center; }
-  .contact p { color: var(--muted); margin-bottom: 24px; }
-  .contact .cta { justify-content: center; }
-  footer { padding: 32px 0; text-align: center; color: var(--muted); font-size: .85rem; border-top: 1px solid var(--line); }
+  /* Habilidades: columnas agrupadas */
+  .skills { display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px; margin-top: 52px; }
+  .skills h3 { font-size: 1rem; padding-bottom: 14px; margin-bottom: 14px; border-bottom: 2px solid var(--accent); }
+  .skills ul { list-style: none; display: grid; gap: 8px; color: var(--muted); font-size: .97rem; }
 
-  @media (max-width: 720px) {
+  /* Certificaciones: destacadas + resto */
+  .certs { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; margin-top: 52px; align-items: start; }
+  .now { display: grid; gap: 16px; }
+  .now-card { border-radius: var(--r); padding: 26px 28px; background: var(--surface); border: 1px solid var(--line); box-shadow: var(--shadow); }
+  .now-card .code { font-size: 2.2rem; font-weight: 600; letter-spacing: -.03em; color: var(--accent); line-height: 1; }
+  .now-card h3 { font-size: 1.05rem; margin-top: 10px; }
+  .now-card p { color: var(--muted); font-size: .92rem; margin-top: 2px; }
+  .done h3 { font-size: 1rem; margin-bottom: 14px; }
+  .done ul { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 12px 20px; }
+  .done li { font-size: .93rem; color: var(--muted); }
+  .done li b { display: block; color: var(--text); font-weight: 600; font-size: .95rem; }
+  .edu { margin-top: 40px; padding-top: 28px; border-top: 1px solid var(--line); }
+
+  /* Cierre */
+  .closing { background: var(--surface); border-top: 1px solid var(--line); }
+  .closing .wrap { display: grid; grid-template-columns: 1.4fr 1fr; gap: 48px; align-items: end; }
+  .closing h2 { font-size: clamp(2rem, 4.2vw, 3.2rem); max-width: 18ch; }
+  .closing .actions { justify-content: flex-end; }
+  footer { padding: 28px 0; color: var(--muted); font-size: .88rem; }
+  footer .wrap { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+
+  /* Movimiento: solo con JS y sin preferencia de movimiento reducido */
+  @media (prefers-reduced-motion: no-preference) {
+    .js .rise { opacity: 0; transform: translateY(18px); animation: rise .8s var(--ease) forwards; animation-delay: calc(var(--i, 0) * 90ms + 80ms); }
+    @keyframes rise { to { opacity: 1; transform: none; } }
+    .js .reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s var(--ease), transform .7s var(--ease); transition-delay: calc(var(--i, 0) * 70ms); }
+    .js .reveal.in { opacity: 1; transform: none; }
+    @supports (animation-timeline: view()) {
+      .js .timeline .progress { animation: grow linear both; animation-timeline: view(); animation-range: entry 20% cover 70%; }
+      @keyframes grow { from { transform: scaleY(0); } to { transform: scaleY(1); } }
+    }
+    .win, .now-card { transition: transform .3s var(--ease), border-color .3s; }
+    .win:hover, .now-card:hover { transform: translateY(-3px); border-color: color-mix(in srgb, var(--accent) 40%, var(--line)); }
+    .project-tag .live { animation: pulse 2.4s ease-in-out infinite; }
+    @keyframes pulse { 50% { opacity: .35; } }
+  }
+
+  /* Móvil */
+  @media (max-width: 900px) {
+    .skills { grid-template-columns: 1fr 1fr; }
+    .xp { grid-template-columns: 1fr; gap: 40px; }
+    .xp-head { position: static; }
+  }
+  @media (max-width: 767px) {
+    .wrap { padding: 0 16px; }
     nav ul { display: none; }
-    header.hero { padding: 64px 0 48px; }
-    .stats, .grid4, .skills, .certs { grid-template-columns: 1fr; }
-    .job { grid-template-columns: 1fr; gap: 6px; }
-    .feature { padding: 24px 20px; }
+    .hero { min-height: auto; padding: 48px 0 56px; }
+    .hero .wrap { grid-template-columns: 1fr; gap: 44px; }
+    .portrait-wrap { max-width: 320px; }
+    .figures .wrap { grid-template-columns: 1fr; }
+    .fig { padding: 24px 0; }
+    .fig + .fig { border-left: 0; border-top: 1px solid var(--line); }
+    section { padding: 72px 0; }
+    .wins { grid-template-columns: 1fr; }
+    .bento { grid-template-columns: 1fr; }
+    .cell.wide { grid-column: auto; }
+    .cell { min-height: 0; }
+    .skills { grid-template-columns: 1fr; gap: 32px; }
+    .certs { grid-template-columns: 1fr; gap: 40px; }
+    .done ul { grid-template-columns: 1fr; }
+    .flow i { display: none; }
+    .closing .wrap { grid-template-columns: 1fr; }
+    .closing .actions { justify-content: flex-start; }
   }
 </style>
 </head>
 <body>
 
-<nav>
+<nav aria-label="Principal">
   <div class="wrap">
     <a class="brand" href="#">Kevin Salazar</a>
     <ul>
       <li><a href="#experiencia">Experiencia</a></li>
-      <li><a href="#proyectos">Proyectos</a></li>
+      <li><a href="#herbarium">Proyecto</a></li>
       <li><a href="#habilidades">Habilidades</a></li>
       <li><a href="#certificaciones">Certificaciones</a></li>
-      <li><a href="#contacto">Contacto</a></li>
     </ul>
+    <a class="btn btn-primary" href="https://linkedin.com/in/kevin-salazar-guevara-56b95b25a" target="_blank" rel="noopener"><i class="ph ph-linkedin-logo" aria-hidden="true"></i>Conectar en LinkedIn</a>
   </div>
 </nav>
 
 <header class="hero">
   <div class="wrap">
-    <div class="eyebrow">Microsoft Security & Cloud Consultant · San José, Costa Rica</div>
-    <h1>Kevin Josué<br>Salazar Guevara</h1>
-    <p class="lede">Ayudo a las empresas a proteger su identidad y su información con Microsoft, a sacar provecho de Copilot y a automatizar procesos con Power Platform e inteligencia artificial.</p>
-    <div class="chips">
-      <span class="chip">Microsoft Entra ID</span><span class="chip">Zero Trust</span><span class="chip">Microsoft 365 Licensing</span>
-      <span class="chip">Microsoft 365 Copilot</span><span class="chip">Power Automate</span><span class="chip">Copilot Studio</span><span class="chip">Claude</span>
+    <div>
+      <p class="role rise" style="--i:0">Microsoft Security & Cloud Consultant</p>
+      <h1 class="rise" style="--i:1">Kevin Josué Salazar Guevara</h1>
+      <p class="lede rise" style="--i:2">Diseño arquitecturas Zero Trust, asesoro licenciamiento y Copilot, y automatizo procesos con Power Platform e IA.</p>
+      <div class="actions rise" style="--i:3">
+        <a class="btn btn-ghost" href="#herbarium">Ver proyecto destacado<i class="ph ph-arrow-down-right" aria-hidden="true"></i></a>
+      </div>
     </div>
-    <div class="cta">
-      <a class="btn primary" href="https://linkedin.com/in/kevin-salazar-guevara-56b95b25a" target="_blank" rel="noopener">Conectar en LinkedIn</a>
-      <a class="btn ghost" href="#proyectos">Ver proyectos</a>
-    </div>
-    <div class="stats">
-      <div class="stat"><b>2+ años</b><small>en seguridad, licenciamiento e identidad Microsoft</small></div>
-      <div class="stat"><b>40+</b><small>casos empresariales al mes resueltos en Entra ID</small></div>
-      <div class="stat"><b>ES · EN</b><small>español nativo, inglés C1</small></div>
+    <div class="portrait-wrap rise" style="--i:2">
+      <div class="portrait">
+        <span class="initials" aria-hidden="true">KS</span>
+        <!-- Foto profesional: subir a assets/kevin.webp (formato 4:5, mínimo 800x1000). Si no existe, se muestran las iniciales. -->
+        <img src="assets/kevin.webp" alt="Kevin Josué Salazar Guevara" width="800" height="1000" onerror="this.remove()">
+      </div>
     </div>
   </div>
 </header>
 
-<section id="experiencia">
+<div class="figures">
   <div class="wrap">
-    <h2>Experiencia<span>.</span></h2>
+    <div class="fig reveal"><b class="mono" data-count="2" data-suffix="+">2+</b><span>años en seguridad, licenciamiento e identidad Microsoft</span></div>
+    <div class="fig reveal" style="--i:1"><b class="mono" data-count="40" data-suffix="+">40+</b><span>casos empresariales al mes resueltos en Entra ID</span></div>
+    <div class="fig reveal" style="--i:2"><b class="mono">C1</b><span>inglés profesional, español nativo</span></div>
+  </div>
+</div>
 
-    <div class="job">
-      <div class="when">Sep 2025 – Actualidad</div>
-      <div>
+<section id="experiencia">
+  <div class="wrap xp">
+    <div class="xp-head reveal">
+      <h2>De identidad en Azure a preventa empresarial</h2>
+      <p class="intro">Del soporte de escalamiento en Entra ID a asesorar clientes empresariales junto a Microsoft.</p>
+    </div>
+    <div class="timeline">
+      <span class="progress" aria-hidden="true"></span>
+
+      <article class="job reveal">
+        <p class="when mono">Sep 2025 - Actualidad</p>
         <h3>Expert Technology Consultant, Microsoft Solutions</h3>
-        <div class="org">Accenture</div>
-        <ul>
-          <li>Asesoría a clientes empresariales en licenciamiento de Microsoft 365, arquitectura de seguridad y adopción de Microsoft 365 Copilot, junto a los equipos de cuenta de Microsoft.</li>
-          <li>Diseño de arquitecturas Zero Trust con Entra ID, Intune, Defender XDR y Purview, y demostraciones técnicas y ejecutivas.</li>
-          <li><b>Hermes Automation:</b> ecosistema en Power Automate, Bookings, Lists y Planner que crea tickets desde nuevas reservas y envía recordatorios diarios por Outlook y Teams.</li>
-          <li><b>Hermes AI Agent:</b> agentes en Copilot Studio para consultar en lenguaje natural, desde Teams, tickets, llamadas pendientes y carga de trabajo.</li>
-          <li><b>Security Enablement:</b> capacitaciones internas y regionales en Defender XDR, Purview, Entra ID, Sentinel, Security Copilot y licenciamiento E7.</li>
-        </ul>
-      </div>
-    </div>
+        <p class="org">Accenture</p>
+        <p>Asesoro a clientes empresariales en licenciamiento de Microsoft 365, arquitectura de seguridad y adopción de Microsoft 365 Copilot, junto a los equipos de cuenta de Microsoft. Diseño arquitecturas Zero Trust con Entra ID, Intune, Defender XDR y Purview.</p>
+        <div class="wins">
+          <div class="win"><i class="ph ph-flow-arrow" aria-hidden="true"></i><h4>Hermes Automation</h4><p>Power Automate, Bookings, Lists y Planner: tickets automáticos desde nuevas reservas y recordatorios diarios en Outlook y Teams.</p></div>
+          <div class="win"><i class="ph ph-robot" aria-hidden="true"></i><h4>Hermes AI Agent</h4><p>Agentes en Copilot Studio para consultar tickets, llamadas pendientes y carga de trabajo desde Teams.</p></div>
+          <div class="win"><i class="ph ph-shield-check" aria-hidden="true"></i><h4>Security Enablement</h4><p>Capacitaciones internas y regionales en Defender XDR, Purview, Entra ID, Sentinel, Security Copilot y licenciamiento E7.</p></div>
+          <div class="win"><i class="ph ph-timer" aria-hidden="true"></i><h4>Microsoft Accelerate</h4><p>Gestión de leads entrantes con respuesta en menos de 24 horas y traspaso al representante correcto.</p></div>
+        </div>
+      </article>
 
-    <div class="job">
-      <div class="when">Jun 2024 – Sep 2025</div>
-      <div>
+      <article class="job reveal">
+        <p class="when mono">Jun 2024 - Sep 2025</p>
         <h3>Technical Senior Support Engineer, Microsoft Azure Identity</h3>
-        <div class="org">Tek Experts</div>
-        <ul>
-          <li>Más de 40 casos empresariales al mes sobre Microsoft Entra ID y Azure AD Connect, resueltos dentro de SLA.</li>
-          <li>Punto de escalamiento del equipo para sincronización compleja de identidad híbrida.</li>
-          <li>Documentación de base de conocimiento que redujo incidentes repetidos.</li>
-        </ul>
-      </div>
-    </div>
+        <p class="org">Tek Experts</p>
+        <p>Más de 40 casos empresariales al mes en Microsoft Entra ID y Azure AD Connect, resueltos dentro de SLA. Punto de escalamiento del equipo en sincronización de identidad híbrida y autor de documentación que redujo incidentes repetidos.</p>
+      </article>
 
-    <div class="job">
-      <div class="when">Mar 2024 – Jun 2024</div>
-      <div>
+      <article class="job reveal">
+        <p class="when mono">Mar 2024 - Jun 2024</p>
         <h3>Customer Service Representative, Banking</h3>
-        <div class="org">Concentrix</div>
-        <ul>
-          <li>Atención de cuentas y banca digital en un entorno regulado, con estándares de seguridad y confidencialidad.</li>
-        </ul>
-      </div>
+        <p class="org">Concentrix</p>
+        <p>Atención de cuentas y banca digital en un entorno regulado, con estándares de seguridad y confidencialidad.</p>
+      </article>
     </div>
   </div>
 </section>
 
-<section id="proyectos">
+<section id="herbarium" class="project">
   <div class="wrap">
-    <h2>Proyecto destacado<span>.</span></h2>
-    <div class="feature">
-      <span class="tag">En curso · Proyecto independiente</span>
-      <h3>Comercializadora Herbarium</h3>
-      <p>Transformación digital de punta a punta: rediseño, modernización y automatización de los procesos del negocio con Microsoft 365, Power Platform y Claude (Anthropic).</p>
-      <div class="grid4">
-        <div class="card"><h4>Rediseño de procesos</h4><p>Mapeo AS-IS, cuellos de botella y diseño TO-BE con hoja de ruta por fases.</p></div>
-        <div class="card"><h4>Automatización</h4><p>Aprobaciones, notificaciones y captura de datos con Power Automate, Power Apps, Forms, SharePoint y Lists.</p></div>
-        <div class="card"><h4>Inteligencia artificial</h4><p>Claude y Microsoft Copilot para SOPs, análisis de datos y asistentes; Copilot Studio para agentes del negocio.</p></div>
-        <div class="card"><h4>Gobierno y reportes</h4><p>Línea base de seguridad (Entra ID, MFA, acceso condicional, Intune, Defender, Purview) y tableros en Power BI.</p></div>
+    <p class="project-tag"><span class="live" aria-hidden="true"></span>En curso, proyecto independiente</p>
+    <h2 class="reveal">Transformación digital de Comercializadora Herbarium</h2>
+    <p class="intro reveal">Rediseño, modernización y automatización de los procesos del negocio con Microsoft 365, Power Platform y Claude.</p>
+
+    <div class="bento">
+      <div class="cell wide solid reveal">
+        <i class="ph ph-path" aria-hidden="true"></i>
+        <div><h3>Rediseño de procesos</h3><p>Mapeo del estado actual, detección de cuellos de botella y diseño del proceso objetivo con una hoja de ruta por fases.</p></div>
       </div>
-      <ol class="phases">
-        <li>Diagnóstico</li><li>Diseño TO-BE</li><li>Base Microsoft 365</li><li>Automatización</li><li>Reportes</li><li>IA aplicada</li>
-      </ol>
+      <div class="cell tint reveal" style="--i:1">
+        <i class="ph ph-lightning" aria-hidden="true"></i>
+        <div><h3>Automatización</h3><p>Aprobaciones, avisos y captura de datos con Power Automate, Power Apps, Forms, SharePoint y Lists.</p></div>
+      </div>
+      <div class="cell dots reveal">
+        <i class="ph ph-sparkle" aria-hidden="true"></i>
+        <div><h3>IA aplicada</h3><p>Claude y Microsoft Copilot para procedimientos, análisis de datos y asistentes internos.</p></div>
+      </div>
+      <div class="cell wide plain reveal" style="--i:1">
+        <i class="ph ph-chart-line-up" aria-hidden="true"></i>
+        <div><h3>Gobierno y reportes</h3><p>Línea base de seguridad con Entra ID, MFA, acceso condicional, Intune, Defender y Purview, y tableros de gestión en Power BI.</p></div>
+      </div>
+    </div>
+
+    <div class="flow reveal" aria-label="Ruta del proyecto">
+      <span>Diagnosticar</span><i class="ph ph-arrow-right" aria-hidden="true"></i>
+      <span>Rediseñar</span><i class="ph ph-arrow-right" aria-hidden="true"></i>
+      <span>Migrar a Microsoft 365</span><i class="ph ph-arrow-right" aria-hidden="true"></i>
+      <span>Automatizar</span><i class="ph ph-arrow-right" aria-hidden="true"></i>
+      <span>Medir con Power BI</span><i class="ph ph-arrow-right" aria-hidden="true"></i>
+      <span>Aplicar IA</span>
     </div>
   </div>
 </section>
 
 <section id="habilidades">
   <div class="wrap">
-    <h2>Habilidades<span>.</span></h2>
+    <h2 class="reveal">Lo que domino</h2>
     <div class="skills">
-      <div><h3>Seguridad e identidad</h3><div class="chips">
-        <span class="chip">Entra ID</span><span class="chip">Conditional Access</span><span class="chip">MFA</span><span class="chip">SSO</span><span class="chip">Identidad híbrida</span><span class="chip">Entra Connect</span><span class="chip">Intune</span><span class="chip">Defender XDR</span><span class="chip">Purview</span><span class="chip">Sentinel</span><span class="chip">Security Copilot</span>
-      </div></div>
-      <div><h3>Licenciamiento y preventa</h3><div class="chips">
-        <span class="chip">Microsoft 365 E3 · E5 · E7</span><span class="chip">EA · CSP</span><span class="chip">Adopción de Copilot</span><span class="chip">Demos ejecutivas</span><span class="chip">Asesoría a clientes</span>
-      </div></div>
-      <div><h3>Automatización e IA</h3><div class="chips">
-        <span class="chip">Power Automate</span><span class="chip">Power Apps</span><span class="chip">Copilot Studio</span><span class="chip">Agentes de IA</span><span class="chip">Claude</span><span class="chip">SharePoint</span><span class="chip">Lists</span><span class="chip">Bookings</span><span class="chip">Planner</span><span class="chip">Power BI</span>
-      </div></div>
-      <div><h3>Plataformas e idiomas</h3><div class="chips">
-        <span class="chip">Microsoft Azure</span><span class="chip">Microsoft 365</span><span class="chip">Power Platform</span><span class="chip">Dynamics 365</span><span class="chip">Español nativo</span><span class="chip">Inglés C1</span>
-      </div></div>
+      <div class="reveal"><h3>Seguridad e identidad</h3><ul><li>Microsoft Entra ID</li><li>Conditional Access y MFA</li><li>Identidad híbrida y Entra Connect</li><li>Zero Trust</li><li>Intune y Defender XDR</li><li>Purview y Sentinel</li><li>Security Copilot</li></ul></div>
+      <div class="reveal" style="--i:1"><h3>Licenciamiento y preventa</h3><ul><li>Microsoft 365 E3, E5 y E7</li><li>EA y CSP</li><li>Adopción de Microsoft 365 Copilot</li><li>Demos técnicas y ejecutivas</li><li>Asesoría a clientes</li></ul></div>
+      <div class="reveal" style="--i:2"><h3>Automatización e IA</h3><ul><li>Power Automate y Power Apps</li><li>Copilot Studio y agentes</li><li>Claude (Anthropic)</li><li>SharePoint, Lists y Bookings</li><li>Planner y Teams</li><li>Power BI</li></ul></div>
+      <div class="reveal" style="--i:3"><h3>Plataformas e idiomas</h3><ul><li>Microsoft Azure</li><li>Microsoft 365</li><li>Power Platform</li><li>Dynamics 365</li><li>Inglés C1, español nativo</li></ul></div>
     </div>
   </div>
 </section>
 
-<section id="certificaciones">
+<section id="certificaciones" class="project">
   <div class="wrap">
-    <h2>Certificaciones y formación<span>.</span></h2>
+    <h2 class="reveal">Certificaciones y formación</h2>
     <div class="certs">
-      <div class="cert"><span class="st">En curso</span><div>SC-300 · Identity and Access Administrator Associate</div></div>
-      <div class="cert"><span class="st">En curso</span><div>AZ-104 · Azure Administrator Associate</div></div>
-      <div class="cert"><span class="st">Planeada</span><div>SC-200 · Security Operations Analyst Associate</div></div>
-      <div class="cert"><span class="st done">Obtenida</span><div>SC-900 · Security, Compliance, and Identity Fundamentals</div></div>
-      <div class="cert"><span class="st done">Obtenida</span><div>AZ-900 · Azure Fundamentals</div></div>
-      <div class="cert"><span class="st done">Obtenida</span><div>MS-900 · Microsoft 365 Fundamentals</div></div>
-      <div class="cert"><span class="st done">Obtenida</span><div>MB-910 · Dynamics 365 Fundamentals (CRM)</div></div>
-      <div class="cert"><span class="st done">Obtenida</span><div>AI Fluency · Anthropic Academy (2025)</div></div>
-      <div class="cert"><span class="st done">Formación</span><div>Ingeniería en Sistemas de Computación · Universidad Fidélitas (en curso)</div></div>
-      <div class="cert"><span class="st done">Formación</span><div>Técnico en Electrónica · CTP Don Bosco (2020 – 2022)</div></div>
+      <div class="now">
+        <div class="now-card reveal"><div class="code mono">SC-300</div><h3>Identity and Access Administrator Associate</h3><p>En preparación</p></div>
+        <div class="now-card reveal" style="--i:1"><div class="code mono">AZ-104</div><h3>Azure Administrator Associate</h3><p>En preparación</p></div>
+        <div class="now-card reveal" style="--i:2"><div class="code mono">SC-200</div><h3>Security Operations Analyst Associate</h3><p>Planeada</p></div>
+      </div>
+      <div class="done reveal">
+        <h3>Obtenidas</h3>
+        <ul>
+          <li><b class="mono">SC-900</b>Security, Compliance, and Identity Fundamentals</li>
+          <li><b class="mono">AZ-900</b>Azure Fundamentals</li>
+          <li><b class="mono">MS-900</b>Microsoft 365 Fundamentals</li>
+          <li><b class="mono">MB-910</b>Dynamics 365 Fundamentals (CRM)</li>
+          <li><b>AI Fluency</b>Anthropic Academy, 2025</li>
+          <li><b>Unified Support</b>QA Ltd</li>
+          <li><b>Cisco Networking Academy</b>Introduction to IoT, IT Essentials</li>
+        </ul>
+        <div class="edu">
+          <h3>Formación</h3>
+          <ul>
+            <li><b>Ingeniería en Sistemas de Computación</b>Universidad Fidélitas, en curso</li>
+            <li><b>Técnico en Electrónica</b>CTP Don Bosco, 2020 - 2022</li>
+          </ul>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<section id="contacto" class="contact">
+<section class="closing">
   <div class="wrap">
-    <h2>Hablemos<span>.</span></h2>
-    <p>Disponible para conversar sobre seguridad Microsoft, Copilot y automatización de procesos.</p>
-    <div class="cta">
-      <a class="btn primary" href="https://linkedin.com/in/kevin-salazar-guevara-56b95b25a" target="_blank" rel="noopener">LinkedIn</a>
-      <a class="btn ghost" href="https://github.com/kevinjosuesalazarguevara-ctrl" target="_blank" rel="noopener">GitHub</a>
+    <h2 class="reveal">¿Hablamos de seguridad, Copilot o automatización?</h2>
+    <div class="actions reveal" style="--i:1">
+      <a class="btn btn-ghost" href="https://github.com/kevinjosuesalazarguevara-ctrl" target="_blank" rel="noopener"><i class="ph ph-github-logo" aria-hidden="true"></i>GitHub</a>
+      <a class="btn btn-primary" href="https://linkedin.com/in/kevin-salazar-guevara-56b95b25a" target="_blank" rel="noopener"><i class="ph ph-linkedin-logo" aria-hidden="true"></i>Conectar en LinkedIn</a>
     </div>
   </div>
 </section>
 
-<footer>© 2026 Kevin Josué Salazar Guevara</footer>
+<footer>
+  <div class="wrap">
+    <span>Kevin Josué Salazar Guevara</span>
+    <span>San José, Costa Rica</span>
+  </div>
+</footer>
+
+<script>
+  (function () {
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var items = document.querySelectorAll('.reveal');
+    if (reduce || !('IntersectionObserver' in window)) {
+      items.forEach(function (el) { el.classList.add('in'); });
+      return;
+    }
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        e.target.classList.add('in');
+        e.target.querySelectorAll('[data-count]').forEach(countUp);
+        io.unobserve(e.target);
+      });
+    }, { threshold: 0.2, rootMargin: '0px 0px -8% 0px' });
+    items.forEach(function (el) { io.observe(el); });
+
+    function countUp(el) {
+      var end = +el.dataset.count, suffix = el.dataset.suffix || '', start = null;
+      function step(t) {
+        if (!start) start = t;
+        var p = Math.min((t - start) / 900, 1);
+        el.textContent = Math.round(end * (1 - Math.pow(1 - p, 3))) + suffix;
+        if (p < 1) requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
+    }
+  })();
+</script>
 </body>
 </html>

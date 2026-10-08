@@ -18,6 +18,10 @@ Skill para mantener y mejorar el portafolio web y el perfil de GitHub de Kevin J
 
 **Regla de consistencia:** cualquier cambio de contenido (experiencia, proyecto, certificación) se aplica en `index.html` **y** en `README.md`. Si el cambio también afecta el CV, avisar al usuario para actualizar el .docx.
 
+## Criterio de diseño
+
+Antes de cualquier cambio visual (rediseño, nueva sección, animaciones), cargar el skill **taste-skill** (`design-taste-frontend`, en `.claude/skills/taste-skill/`) y seguir su proceso: leer el brief, declarar el "Design Read" en una línea y pasar su checklist final. La audiencia de este portafolio son recruiters y clientes empresariales de soluciones Microsoft: sobrio, confiable y profesional. Las reglas de identidad visual y privacidad de este skill tienen prioridad sobre las sugerencias genéricas de taste-skill.
+
 ## Identidad visual
 
 - Acento: `#9c1450` (claro) / `#d63a7c` (oscuro). Es el mismo color del CV.

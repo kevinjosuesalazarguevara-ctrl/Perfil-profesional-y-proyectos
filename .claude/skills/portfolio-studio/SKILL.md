@@ -33,7 +33,8 @@ Antes de cualquier cambio visual (rediseño, nueva sección, animaciones), carga
 - Logos de empresas en `assets/logos/`: Accenture y Anthropic vienen de Simple Icons (CC0) y van inline como SVG. Tek Experts y Concentrix se cargan desde `tek-experts.png` y `concentrix.png` si existen; si no, se muestra el nombre. No dibujar logos a mano.
 - Bilingüe: cada texto visible lleva `<span class="es">` y `<span class="en">`; al agregar contenido, escribir ambos idiomas.
 - Forma: interactivos en pill (999px), paneles 16px, recuadros de logo 10px.
-- Foto de perfil en `assets/kevin.webp` (4:5). Si no existe, el hero muestra las iniciales.
+- Foto de perfil en `assets/kevin.webp`: recorte con fondo transparente (fondo original eliminado con el modelo U2Net human-seg), dentro de un disco con fondo verde oscuro y anillo orbital. Si no existe, el hero muestra las iniciales.
+- Bajo el hero va "Mi stack, capa por capa": cinco capas Zero Trust (identidad, dispositivos, datos y amenazas, procesos, IA) que un haz verde recorre cada 10 s; reemplaza al ticker. En móvil se desliza en horizontal.
 - Sin guiones largos (—) ni medios (–) en el texto visible.
 
 ## Animación con herramientas gratuitas

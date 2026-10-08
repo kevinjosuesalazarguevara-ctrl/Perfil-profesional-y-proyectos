@@ -36,6 +36,18 @@
 .ph.ph-certificate:before {
   content: "\e766";
 }
+.ph.ph-check-circle:before {
+  content: "\e184";
+}
+.ph.ph-database:before {
+  content: "\e1de";
+}
+.ph.ph-devices:before {
+  content: "\eba4";
+}
+.ph.ph-fingerprint:before {
+  content: "\e23e";
+}
 .ph.ph-flow-arrow:before {
   content: "\e6ec";
 }

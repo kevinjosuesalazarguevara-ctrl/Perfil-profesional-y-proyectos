@@ -40,6 +40,10 @@ Reducir el trabajo manual, ordenar la información del negocio y dar visibilidad
 - Tableros en Power BI
 - Línea base de seguridad de Microsoft 365
 
+## Demo de rediseño web
+
+[`demo/herbarium-demo.html`](./demo/herbarium-demo.html): propuesta de renovación de marca y sitio web (SPA con rutas, escena 3D con Three.js, catálogo real, asistente, cotizador de maquila y registro con promoción). Detalles en [`demo/README.md`](./demo/README.md).
+
 ## Estado
 
 🟢 En curso. Este documento se irá actualizando con avances y resultados.

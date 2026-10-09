@@ -351,6 +351,7 @@ button,input,select,textarea{font:inherit;color:inherit}
 .dark .ph{background:rgba(231,228,1,.16);color:var(--sol);border-color:rgba(231,228,1,.45)}
 .badge-val{display:inline-flex;align-items:center;gap:6px;font:600 11px/1 var(--sans);letter-spacing:.08em;text-transform:uppercase;padding:6px 10px;border-radius:999px;background:var(--sol);color:var(--petroleo)}
 .ic{width:1.15em;height:1.15em;flex:none}
+[hidden]{display:none!important}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
 
 /* ---------- Fondos con motivos del logo ---------- */

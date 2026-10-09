@@ -3,7 +3,7 @@
 **Microsoft Security & Cloud Consultant** · Identidad y Zero Trust · Licenciamiento y Copilot · Power Platform e IA
 📍 San José, Costa Rica · 🌐 [Portafolio](https://kevinjosuesalazarguevara-ctrl.github.io/perfil-profesional-y-proyectos/) · 💼 [LinkedIn](https://linkedin.com/in/kevin-salazar-guevara-56b95b25a)
 
-Consultor de soluciones Microsoft con más de 2 años de experiencia en seguridad de Microsoft 365, licenciamiento e identidad en Azure. Pasé de ingeniero senior de escalamiento en identidad a asesor de preventa empresarial en Accenture. Diseño arquitecturas Zero Trust con Microsoft Entra ID, Intune, Defender XDR y Purview, lidero demostraciones técnicas y ejecutivas, y construyo automatizaciones y agentes de IA con Power Automate y Copilot Studio.
+Consultor de soluciones Microsoft con casi 3 años de experiencia profesional y en la industria desde 2022, cuando hice mi pasantía en Intel. Pasé por análisis de datos de bienes raíces comerciales y por ingeniería senior de escalamiento en identidad de Azure hasta llegar a asesor de preventa empresarial en Accenture. Diseño arquitecturas Zero Trust con Microsoft Entra ID, Intune, Defender XDR y Purview, lidero demostraciones técnicas y ejecutivas, y construyo automatizaciones y agentes de IA con Power Automate y Copilot Studio.
 
 ---
 
@@ -30,6 +30,16 @@ Consultor de soluciones Microsoft con más de 2 años de experiencia en segurida
 *Mar 2024 – Jun 2024*
 
 - Atención de consultas de cuentas y banca digital en un entorno regulado, aplicando estándares de seguridad y confidencialidad.
+
+### Real Estate Data Analyst, U.S. Commercial Real Estate — Maecre
+*Ene 2024 – Abr 2024*
+
+- Análisis de datos de propiedades de bienes raíces comerciales en Estados Unidos y llenado de reportes de avalúo para peritos certificados, completando cerca del 80% de cada reporte antes de la revisión del perito.
+
+### Manufacturing Maintenance Intern (pasantía técnica) — Intel
+*2022*
+
+- Documentación y estandarización de los procesos de mantenimiento de válvulas y maquinaria de manufactura, con procedimientos operativos (SOPs) para el equipo de mantenimiento.
 
 ---
 

@@ -194,10 +194,10 @@
   .job::before { content: ""; position: absolute; left: -36px; top: 8px; width: 14px; height: 14px; border-radius: 50%; background: var(--bg); border: 2px solid var(--green); box-shadow: 0 0 0 5px var(--bg); }
   .job-head { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
   .logo { height: 44px; min-width: 44px; padding: 0 14px; border-radius: 10px; border: 1px solid var(--line-2); background: var(--surface-2); display: inline-flex; align-items: center; gap: 10px; color: var(--text); font-weight: 600; font-size: .95rem; letter-spacing: -.01em; }
-  .logo svg { width: 20px; height: 20px; color: var(--green); }
-  .logo-word svg { width: 54px; height: 32px; color: var(--text); }
-  .logo img { height: 26px; width: auto; max-width: 130px; object-fit: contain; }
-  .logo.has-img { background: #eef3f0; border-color: transparent; }
+  .logo svg { width: 20px; height: 20px; }
+  .mark-img { display: block; background: currentColor; -webkit-mask: var(--logo) center / contain no-repeat; mask: var(--logo) center / contain no-repeat; }
+  .logo { transition: color .3s, border-color .3s; }
+  .job:hover .logo { color: var(--green); border-color: var(--green-deep); }
   .when { font: 500 .82rem var(--mono); color: var(--muted); }
   .job h3 { font-size: 1.28rem; letter-spacing: -.02em; line-height: 1.3; margin-top: 16px; }
   .job .place { color: var(--green); font-size: .92rem; margin-top: 2px; }
@@ -492,18 +492,18 @@
 
       <article class="job reveal">
         <div class="job-head">
-          <span class="logo" data-logo="tek-experts" data-src="https://static.wixstatic.com/media/b49e6d_c8f37450c3b24985b0360d308e71dd3f~mv2.png/v1/crop/x_2,y_0,w_463,h_158/fill/w_234,h_80,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/tekexperts-logo-site.png">Tek Experts</span>
+          <span class="logo"><span class="mark-img" role="img" aria-label="TeKnowledge" style="--logo:url(assets/logos/teknowledge.png); width:127.8px; height:26px"></span></span>
           <span class="when">Jun 2024 - Sep 2025</span>
         </div>
         <h3>Technical Senior Support Engineer, Microsoft Azure Identity</h3>
-        <p class="place">Tek Experts</p>
+        <p class="place">TeKnowledge</p>
         <p><span class="es">Más de 40 casos empresariales al mes en Entra ID y Azure AD Connect dentro de SLA. Punto de escalamiento en sincronización de identidad híbrida y autor de documentación que redujo incidentes repetidos.</span><span class="en">40+ enterprise cases a month on Entra ID and Azure AD Connect within SLA. Escalation point for hybrid identity sync and author of documentation that reduced repeat incidents.</span></p>
         <div class="chips"><span>Entra ID</span><span>Entra Connect</span><span>MFA</span><span>SLA</span></div>
       </article>
 
       <article class="job reveal">
         <div class="job-head">
-          <span class="logo" data-logo="concentrix" data-src="https://www.concentrix.com/wp-content/uploads/2026/04/concentrix_logo-1.webp">Concentrix</span>
+          <span class="logo"><span class="mark-img" role="img" aria-label="Concentrix" style="--logo:url(assets/logos/concentrix.png); width:118.7px; height:20px"></span></span>
           <span class="when">Mar 2024 - Jun 2024</span>
         </div>
         <h3>Customer Service Representative, Banking</h3>
@@ -513,7 +513,7 @@
 
       <article class="job reveal">
         <div class="job-head">
-          <span class="logo" data-logo="maecre" data-src="https://images.squarespace-cdn.com/content/v1/671125ee5f16c01fbe775eec/63abb18b-ce36-499b-9f82-05ea66a4c35a/maecreLogo.png?format=500w">Maecre</span>
+          <span class="logo"><span class="mark-img" role="img" aria-label="Maecre" style="--logo:url(assets/logos/maecre.png); width:108.5px; height:22px"></span></span>
           <span class="when">Jan 2024 - Apr 2024</span>
         </div>
         <h3>Real Estate Data Analyst, U.S. Commercial Real Estate</h3>
@@ -524,7 +524,7 @@
 
       <article class="job reveal">
         <div class="job-head">
-          <span class="logo logo-word"><svg viewBox="0 0 24 24" fill="currentColor" role="img" aria-label="Intel"><path d="M20.42 7.345v9.18h1.651v-9.18zM0 7.475v1.737h1.737V7.474zm9.78.352v6.053c0 .513.044.945.13 1.292.087.34.235.618.44.828.203.21.475.359.803.451.334.093.754.136 1.255.136h.216v-1.533c-.24 0-.445-.012-.593-.037a.672.672 0 0 1-.39-.173.693.693 0 0 1-.173-.377 4.002 4.002 0 0 1-.037-.606v-2.182h1.193v-1.416h-1.193V7.827zm-3.505 2.312c-.396 0-.76.08-1.082.241-.327.161-.6.384-.822.668l-.087.117v-.902H2.658v6.256h1.639v-3.214c.018-.588.16-1.02.433-1.299.29-.297.642-.445 1.044-.445.476 0 .841.149 1.082.433.235.284.359.686.359 1.2v3.324h1.663V12.97c.006-.89-.229-1.595-.686-2.09-.458-.495-1.1-.742-1.917-.742zm10.065.006a3.252 3.252 0 0 0-2.306.946c-.29.29-.525.637-.692 1.033a3.145 3.145 0 0 0-.254 1.273c0 .452.08.878.241 1.274.161.395.39.742.674 1.032.284.29.637.526 1.045.693.408.173.86.26 1.342.26 1.397 0 2.262-.637 2.782-1.23l-1.187-.904c-.248.297-.841.699-1.583.699-.464 0-.847-.105-1.138-.321a1.588 1.588 0 0 1-.593-.872l-.019-.056h4.915v-.587c0-.451-.08-.872-.235-1.267a3.393 3.393 0 0 0-.661-1.033 3.013 3.013 0 0 0-1.02-.692 3.345 3.345 0 0 0-1.311-.248zm-16.297.118v6.256h1.651v-6.256zm16.278 1.286c1.132 0 1.664.797 1.664 1.255l-3.32.006c0-.458.525-1.255 1.656-1.261zm7.073 3.814a.606.606 0 0 0-.606.606.606.606 0 0 0 .606.606.606.606 0 0 0 .606-.606.606.606 0 0 0-.606-.606zm-.008.105a.5.5 0 0 1 .002 0 .5.5 0 0 1 .5.501.5.5 0 0 1-.5.5.5.5 0 0 1-.5-.5.5.5 0 0 1 .498-.5zm-.233.155v.699h.13v-.285h.093l.173.285h.136l-.18-.297a.191.191 0 0 0 .118-.056c.03-.03.05-.074.05-.136 0-.068-.02-.117-.063-.154-.037-.038-.105-.056-.185-.056zm.13.099h.154c.019 0 .037.006.056.012a.064.064 0 0 1 .037.031c.013.013.012.031.012.056a.124.124 0 0 1-.012.055.164.164 0 0 1-.037.031c-.019.006-.037.013-.056.013h-.154Z"/></svg></span>
+          <span class="logo"><span class="mark-img" role="img" aria-label="Intel" style="--logo:url(assets/logos/intel.png); width:61.4px; height:24px"></span></span>
           <span class="when">2022</span>
         </div>
         <h3><span class="es">Pasantía técnica, mantenimiento de manufactura</span><span class="en">Manufacturing Maintenance Intern</span></h3>
@@ -658,19 +658,6 @@
       });
     });
 
-    // Logos opcionales: si existe assets/logos/<nombre>.png se muestra la imagen; si no, queda el nombre.
-    document.querySelectorAll('[data-logo]').forEach(function (el) {
-      var sources = ['assets/logos/' + el.dataset.logo + '.png'];
-      if (el.dataset.src) sources.push(el.dataset.src);
-      (function tryNext(i) {
-        if (i >= sources.length) return;
-        var img = new Image();
-        img.alt = el.textContent.trim();
-        img.onload = function () { el.textContent = ''; el.classList.add('has-img'); el.appendChild(img); };
-        img.onerror = function () { tryNext(i + 1); };
-        img.src = sources[i];
-      })(0);
-    });
 
     // Aparición al hacer scroll + contadores
     var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;

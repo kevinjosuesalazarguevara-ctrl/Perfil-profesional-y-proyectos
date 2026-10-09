@@ -19,7 +19,7 @@ Consultor de soluciones Microsoft con casi 3 años de experiencia profesional y 
 - **Security Enablement:** capacitaciones internas y regionales sobre Defender XDR, Purview, Entra ID, Sentinel, Security Copilot y licenciamiento Microsoft 365 E7, incluido el equipo SAS Colombia.
 - **Inbound Campaign Management:** gestión de leads de la campaña Microsoft Accelerate con un estándar de respuesta de 24 horas.
 
-### Technical Senior Support Engineer, Microsoft Azure Identity — Tek Experts
+### Technical Senior Support Engineer, Microsoft Azure Identity — TeKnowledge
 *Jun 2024 – Sep 2025*
 
 - Resolución de más de 40 casos empresariales al mes sobre Microsoft Entra ID y Azure AD Connect dentro de SLA.

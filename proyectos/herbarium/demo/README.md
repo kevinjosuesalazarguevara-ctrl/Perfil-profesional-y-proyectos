@@ -24,6 +24,10 @@ Otros comandos: `npm run build` (solo genera el HTML) y `npm run check` (revisa 
 
 El `herbarium-demo.html` ya generado también se puede abrir con doble clic. Incluye la escena 3D y las tipografías, así que **funciona sin internet**: no depende del wifi del lugar de la presentación.
 
+**Medidor de FPS:** tecla **F** durante la demo, o agregar `?fps` al final de la dirección (por ejemplo `#/inicio?fps`). Muestra los cuadros por segundo, el peor cuadro y la resolución de la escena 3D.
+
+**Rendimiento:** la escena 3D ajusta su resolución sola si el equipo no sostiene 60 FPS. Si hace falta, apaga el suavizado de bordes y dibuja la mitad del polen. Se pausa cuando no se ve o cuando hay un modal abierto. Las animaciones de la interfaz usan solo `transform` y `opacity`, que el navegador mueve sin repintar.
+
 Antes de presentar, conviene limpiar los datos de prueba: **Vaciar carrito** en el carrito y **Borrar todo** en el panel del Club.
 
 ## Qué incluye

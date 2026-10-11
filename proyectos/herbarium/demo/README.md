@@ -9,6 +9,9 @@ Demo para presentar a Comercializadora Herbarium una propuesta de rediseño de [
 | `build.mjs` | Compila el `.ts` y genera el `.html`, con Three.js, tipografías e imágenes de `assets/` incrustadas. |
 | `serve.mjs` | Servidor local que abre la demo en el navegador. |
 | `package.json` / `tsconfig.json` | Dependencias y configuración de TypeScript. |
+| [`PROPUESTA.md`](./PROPUESTA.md) | Diagnóstico, decisiones, rendimiento, datos a validar y capturas. |
+| [`PRESUPUESTO.md`](./PRESUPUESTO.md) | Estimación de precio en Costa Rica. |
+| `capturas/` | Capturas de las vistas principales. |
 
 ## Para presentar
 

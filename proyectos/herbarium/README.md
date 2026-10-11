@@ -42,7 +42,14 @@ Reducir el trabajo manual, ordenar la información del negocio y dar visibilidad
 
 ## Demo de rediseño web
 
-[`demo/herbarium-demo.html`](./demo/herbarium-demo.html): propuesta de renovación de marca y sitio web (SPA con rutas, escena 3D con Three.js, catálogo real, asistente, cotizador de maquila y registro con promoción). Detalles en [`demo/README.md`](./demo/README.md).
+Propuesta de renovación de marca y sitio web para presentar al cliente: SPA con rutas, escena 3D con Three.js, catálogo real, asistente, cotizador de maquila y registro con promoción. Funciona sin internet y está optimizada para 60 FPS.
+
+| Documento | Contenido |
+|---|---|
+| [`demo/herbarium-demo.html`](./demo/herbarium-demo.html) | La demo: se abre con doble clic. |
+| [`demo/README.md`](./demo/README.md) | Cómo presentarla, qué incluye y cómo completarla. |
+| [`demo/PROPUESTA.md`](./demo/PROPUESTA.md) | Encargo, diagnóstico del sitio actual, decisiones, rendimiento, datos a validar y capturas. |
+| [`demo/PRESUPUESTO.md`](./demo/PRESUPUESTO.md) | Estimación de precio en el mercado costarricense. |
 
 ## Estado
 

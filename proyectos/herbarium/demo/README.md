@@ -6,9 +6,25 @@ Demo para presentar a Comercializadora Herbarium una propuesta de rediseño de [
 |---|---|
 | `herbarium-demo.html` | **Entregable.** Un solo archivo: se abre con doble clic en cualquier navegador. |
 | `herbarium-demo.ts` | Código fuente en TypeScript (datos, estilos, escena 3D, rutas e interacciones). |
-| `build.mjs` | Compila el `.ts` y genera el `.html`, incrustando las imágenes de `assets/` si existen. |
+| `build.mjs` | Compila el `.ts` y genera el `.html`, con Three.js, tipografías e imágenes de `assets/` incrustadas. |
+| `serve.mjs` | Servidor local que abre la demo en el navegador. |
+| `package.json` / `tsconfig.json` | Dependencias y configuración de TypeScript. |
 
-Necesita internet al abrirse para cargar Three.js (cdnjs) y las tipografías (Google Fonts). Sin conexión funciona igual, con una portada ilustrada en lugar de la escena 3D.
+## Para presentar
+
+Requiere [Node.js](https://nodejs.org) 18 o superior.
+
+```bash
+cd proyectos/herbarium/demo
+npm install      # una sola vez
+npm run demo     # compila el TypeScript y abre http://localhost:5173
+```
+
+Otros comandos: `npm run build` (solo genera el HTML) y `npm run check` (revisa los tipos).
+
+El `herbarium-demo.html` ya generado también se puede abrir con doble clic. Incluye la escena 3D y las tipografías, así que **funciona sin internet**: no depende del wifi del lugar de la presentación.
+
+Antes de presentar, conviene limpiar los datos de prueba: **Vaciar carrito** en el carrito y **Borrar todo** en el panel del Club.
 
 ## Qué incluye
 
@@ -29,11 +45,6 @@ El sitio actual estaba bloqueado desde el entorno donde se construyó la demo, a
 3. **Portada actual:** guardar una captura como `assets/portada-actual.png` para el comparador.
 4. **Tarifas de maquila:** completar `TARIFAS` en el `.ts` para que el cotizador calcule totales.
 
-Después, regenerar el HTML:
-
-```bash
-npm i -g typescript   # una sola vez
-node build.mjs
-```
+Después, regenerar el HTML con `npm run build`.
 
 Todo dato no publicado aparece entre corchetes, por ejemplo `[N.º REGISTRO SANITARIO]`.

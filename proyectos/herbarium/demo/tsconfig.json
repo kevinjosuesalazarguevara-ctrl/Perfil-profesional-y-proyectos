@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "target": "ES2019",
+    "lib": ["ES2019", "DOM", "DOM.Iterable"],
+    "strict": false,
+    "skipLibCheck": true,
+    "removeComments": false,
+    "outDir": ".build"
+  },
+  "files": ["herbarium-demo.ts"]
+}

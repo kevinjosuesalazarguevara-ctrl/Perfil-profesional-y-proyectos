@@ -118,6 +118,10 @@
   .btn-line { border-color: var(--line-2); color: var(--text); background: rgba(15, 21, 19, .6); }
   .btn-line:hover { border-color: var(--green); color: var(--green); }
   .btn i { font-size: 1.05rem; }
+  .btn .ico { width: 1.05rem; height: 1.05rem; fill: none; stroke: currentColor; stroke-width: 16; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; }
+  button.btn { font: inherit; font-weight: 600; font-size: .95rem; cursor: pointer; }
+  .copy-mail .mail-txt { overflow: hidden; text-overflow: ellipsis; }
+  @media (max-width: 480px) { .copy-mail { max-width: 100%; white-space: normal; } .copy-mail .mail-txt { overflow-wrap: anywhere; } }
 
   /* Hero */
   .hero { padding: 72px 0 40px; overflow-x: clip; }
@@ -231,7 +235,7 @@
 
   /* Proyectos */
   .work { display: grid; grid-template-columns: 1.6fr 1fr; gap: 16px; margin-top: 52px; }
-  .feature { grid-row: span 2; border-radius: var(--r); border: 1px solid var(--green-deep); background: var(--surface); padding: 32px; display: flex; flex-direction: column; gap: 18px; overflow: hidden; }
+  .feature { grid-row: span 3; border-radius: var(--r); border: 1px solid var(--green-deep); background: var(--surface); padding: 32px; display: flex; flex-direction: column; gap: 18px; overflow: hidden; }
   .status { display: inline-flex; align-items: center; gap: 8px; font: 500 .78rem var(--mono); color: var(--green); }
   .status .pulse { width: 8px; height: 8px; border-radius: 50%; background: var(--green); }
   .feature h3 { font-size: clamp(1.5rem, 2.6vw, 2rem); letter-spacing: -.03em; line-height: 1.15; }
@@ -372,8 +376,8 @@
         <span class="en">Security, Copilot and automation <em>on Microsoft.</em></span>
       </h1>
       <p class="lede rise" style="--i:2">
-        <span class="es">Soy Kevin Salazar. Diseño arquitecturas Zero Trust, asesoro licenciamiento y Copilot, y automatizo procesos con Power Platform e IA.</span>
-        <span class="en">I'm Kevin Salazar. I design Zero Trust architectures, advise on licensing and Copilot, and automate processes with Power Platform and AI.</span>
+        <span class="es">Soy Kevin Salazar Guevara. Diseño arquitecturas Zero Trust, asesoro licenciamiento y Copilot, y automatizo procesos con Power Platform e IA.</span>
+        <span class="en">I'm Kevin Salazar Guevara. I design Zero Trust architectures, advise on licensing and Copilot, and automate processes with Power Platform and AI.</span>
       </p>
       <div class="actions rise" style="--i:3">
         <a class="btn btn-green" href="#proyectos"><span class="es">Ver proyectos</span><span class="en">See projects</span><i class="ph ph-arrow-down-right" aria-hidden="true"></i></a>
@@ -402,27 +406,22 @@
       <div class="layer" style="--n:0">
         <div class="lh"><i class="ph ph-fingerprint" aria-hidden="true"></i><span><span class="es">Identidad</span><span class="en">Identity</span></span></div>
         <ul><li>Entra ID</li><li>MFA</li><li>Conditional Access</li><li>Entra Connect</li></ul>
-        <span class="ok"><i class="ph ph-check-circle" aria-hidden="true"></i><span class="es">verificado</span><span class="en">verified</span></span>
       </div>
       <div class="layer" style="--n:1">
         <div class="lh"><i class="ph ph-devices" aria-hidden="true"></i><span><span class="es">Dispositivos</span><span class="en">Devices</span></span></div>
         <ul><li>Intune</li><li>Defender XDR</li><li>Endpoint</li></ul>
-        <span class="ok"><i class="ph ph-check-circle" aria-hidden="true"></i><span class="es">verificado</span><span class="en">verified</span></span>
       </div>
       <div class="layer" style="--n:2">
         <div class="lh"><i class="ph ph-database" aria-hidden="true"></i><span><span class="es">Datos y amenazas</span><span class="en">Data and threats</span></span></div>
         <ul><li>Purview</li><li>Sentinel</li><li>Security Copilot</li></ul>
-        <span class="ok"><i class="ph ph-check-circle" aria-hidden="true"></i><span class="es">verificado</span><span class="en">verified</span></span>
       </div>
       <div class="layer" style="--n:3">
         <div class="lh"><i class="ph ph-flow-arrow" aria-hidden="true"></i><span><span class="es">Procesos</span><span class="en">Processes</span></span></div>
         <ul><li>Power Automate</li><li>Power Apps</li><li>Power BI</li><li>SharePoint</li></ul>
-        <span class="ok"><i class="ph ph-check-circle" aria-hidden="true"></i><span class="es">verificado</span><span class="en">verified</span></span>
       </div>
       <div class="layer" style="--n:4">
         <div class="lh"><i class="ph ph-sparkle" aria-hidden="true"></i><span><span class="es">IA</span><span class="en">AI</span></span></div>
-        <ul><li>M365 Copilot</li><li>Copilot Studio</li><li>Claude</li></ul>
-        <span class="ok"><i class="ph ph-check-circle" aria-hidden="true"></i><span class="es">verificado</span><span class="en">verified</span></span>
+        <ul><li>M365 Copilot</li><li>Copilot Studio</li><li>Claude</li><li>Claude Code</li></ul>
       </div>
     </div>
   </div>
@@ -433,12 +432,12 @@
     <div class="copy reveal">
       <h2><span class="es">De resolver identidad a <em>diseñar soluciones.</em></span><span class="en">From fixing identity to <em>designing solutions.</em></span></h2>
       <p style="margin-top:22px"><span class="es">Empecé en 2022 con una pasantía en Intel documentando procesos de manufactura, pasé por análisis de datos de bienes raíces comerciales y llegué a ser ingeniero senior de escalamiento en Microsoft Entra ID. Hoy, en Accenture, asesoro a clientes en seguridad, licenciamiento y adopción de Copilot junto a los equipos de Microsoft.</span><span class="en">I started in 2022 with an Intel internship documenting manufacturing processes, moved through commercial real estate data analysis, and became a senior escalation engineer on Microsoft Entra ID. Today, at Accenture, I advise clients on security, licensing and Copilot adoption alongside Microsoft account teams.</span></p>
-      <p><span class="es">En paralelo construyo automatizaciones y agentes de IA con Power Platform, Copilot Studio y Claude, y lidero la transformación digital de Comercializadora Herbarium.</span><span class="en">On the side I build automations and AI agents with Power Platform, Copilot Studio and Claude, and I lead the digital transformation of Comercializadora Herbarium.</span></p>
+      <p><span class="es">En paralelo construyo automatizaciones y agentes de IA con Power Platform, Copilot Studio y Claude, desarrollo con Claude Code y lidero la transformación digital de Comercializadora Herbarium.</span><span class="en">On the side I build automations and AI agents with Power Platform, Copilot Studio and Claude, develop with Claude Code, and lead the digital transformation of Comercializadora Herbarium.</span></p>
     </div>
     <div class="stats reveal" style="--i:1">
       <div class="stat"><b data-count="3">3</b><span class="es">años de experiencia profesional, en la industria desde 2022</span><span class="en">years of professional experience, in the industry since 2022</span></div>
       <div class="stat"><b data-count="40" data-suffix="+">40+</b><span class="es">casos empresariales al mes en Entra ID</span><span class="en">enterprise cases a month on Entra ID</span></div>
-      <div class="stat"><b data-count="8">8</b><span class="es">certificaciones obtenidas: Microsoft, Anthropic, Cisco y QA</span><span class="en">certifications earned: Microsoft, Anthropic, Cisco and QA</span></div>
+      <div class="stat"><b data-count="9">9</b><span class="es">certificaciones obtenidas: Microsoft, Anthropic, Cisco y QA</span><span class="en">certifications earned: Microsoft, Anthropic, Cisco and QA</span></div>
       <div class="stat"><b>C1</b><span class="es">inglés profesional, español nativo</span><span class="en">professional English, native Spanish</span></div>
     </div>
   </div>
@@ -469,8 +468,8 @@
       <article class="cap grid reveal" style="--i:1">
         <i class="ph ph-robot" aria-hidden="true"></i>
         <h3><span class="es">Agentes de IA</span><span class="en">AI agents</span></h3>
-        <p><span class="es">Agentes en Copilot Studio y trabajo con Claude para consultas en lenguaje natural, documentación y análisis.</span><span class="en">Agents in Copilot Studio and work with Claude for natural-language queries, documentation and analysis.</span></p>
-        <div class="chips"><span>Copilot Studio</span><span>Claude</span><span>Teams</span></div>
+        <p><span class="es">Agentes en Copilot Studio, trabajo con Claude para documentación y análisis, y desarrollo web asistido por IA con Claude Code.</span><span class="en">Copilot Studio agents, Claude for documentation and analysis, and AI-assisted web development with Claude Code.</span></p>
+        <div class="chips"><span>Copilot Studio</span><span>Claude</span><span>Claude Code</span><span>Teams</span></div>
       </article>
     </div>
   </div>
@@ -565,6 +564,12 @@
         <span class="issuer"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.3041 3.541h-3.6718l6.696 16.918H24Zm-10.6082 0L0 20.459h3.7442l1.3693-3.5527h7.0052l1.3693 3.5528h3.7442L10.5363 3.5409Zm-.3712 10.2232 2.2914-5.9456 2.2914 5.9456Z"/></svg>Anthropic Academy</span>
       </article>
       <article class="cred reveal">
+        <div class="top"><span class="code">Claude 101</span><span class="state">2026</span></div>
+        <h3><span class="es">Fundamentos de Claude</span><span class="en">Claude fundamentals</span></h3>
+        <p><span class="es">Flujos de trabajo prácticos con Claude para productividad diaria.</span><span class="en">Practical Claude workflows for everyday productivity.</span></p>
+        <span class="issuer"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.3041 3.541h-3.6718l6.696 16.918H24Zm-10.6082 0L0 20.459h3.7442l1.3693-3.5527h7.0052l1.3693 3.5528h3.7442L10.5363 3.5409Zm-.3712 10.2232 2.2914-5.9456 2.2914 5.9456Z"/></svg>Anthropic Academy</span>
+      </article>
+      <article class="cred reveal">
         <div class="top"><span class="code">SC-900</span><span class="state"><span class="es">Obtenida</span><span class="en">Earned</span></span></div>
         <h3>Security, Compliance, and Identity Fundamentals</h3>
         <span class="issuer">Microsoft</span>
@@ -585,13 +590,8 @@
         <span class="issuer">QA Ltd</span>
       </article>
       <article class="cred reveal" style="--i:1">
-        <div class="top"><span class="code">IoT</span><span class="state">2023</span></div>
-        <h3>Introduction to IoT</h3>
-        <span class="issuer">Cisco Networking Academy</span>
-      </article>
-      <article class="cred reveal" style="--i:2">
-        <div class="top"><span class="code">IT Essentials</span><span class="state"><span class="es">Obtenida</span><span class="en">Earned</span></span></div>
-        <h3>PC Hardware and Software</h3>
+        <div class="top"><span class="code">Cisco</span><span class="state"><span class="es">Obtenidas</span><span class="en">Earned</span></span></div>
+        <h3>Introduction to IoT, IT Essentials: PC Hardware and Software</h3>
         <span class="issuer">Cisco Networking Academy</span>
       </article>
     </div>
@@ -615,6 +615,7 @@
           <li><i class="ph ph-lightning" aria-hidden="true"></i><span><b><span class="es">Automatización:</span><span class="en">Automation:</span></b> <span class="es">aprobaciones, avisos y captura de datos con Power Automate, Power Apps y Forms.</span><span class="en">approvals, notifications and data capture with Power Automate, Power Apps and Forms.</span></span></li>
           <li><i class="ph ph-sparkle" aria-hidden="true"></i><span><b><span class="es">IA:</span><span class="en">AI:</span></b> <span class="es">Claude y Copilot para procedimientos, análisis y asistentes internos.</span><span class="en">Claude and Copilot for procedures, analysis and internal assistants.</span></span></li>
           <li><i class="ph ph-lock-key" aria-hidden="true"></i><span><b><span class="es">Gobierno:</span><span class="en">Governance:</span></b> <span class="es">línea base con Entra ID, MFA, Intune, Defender y Purview, y tableros en Power BI.</span><span class="en">baseline with Entra ID, MFA, Intune, Defender and Purview, plus Power BI dashboards.</span></span></li>
+          <li><i class="ph ph-database" aria-hidden="true"></i><span><b><span class="es">Sitio web:</span><span class="en">Website:</span></b> <span class="es">nuevo sitio de la empresa en construcción sobre una plataforma moderna en la nube.</span><span class="en">new company website in progress, built on a modern cloud platform.</span></span></li>
         </ul>
         <div class="flow" aria-label="Arquitectura del proyecto">
           <div class="col">
@@ -643,6 +644,12 @@
         <p><span class="es">Agentes en Copilot Studio para consultar en lenguaje natural, desde Teams, el estado de tickets, llamadas pendientes y la carga del día.</span><span class="en">Copilot Studio agents to ask, in natural language from Teams, about ticket status, pending calls and the day's workload.</span></p>
         <div class="chips"><span>Copilot Studio</span><span>Teams</span></div>
       </article>
+      <article class="mini reveal" style="--i:3">
+        <span class="status"><span class="pulse" aria-hidden="true"></span><span class="es">En curso, Claude Code</span><span class="en">In progress, Claude Code</span></span>
+        <h3><span class="es">Desarrollo asistido por IA</span><span class="en">AI-assisted development</span></h3>
+        <p><span class="es">Construyo y mantengo este portafolio con Claude Code, con skills propios para diseño y contenido y publicación en GitHub Pages, y uso el mismo flujo para el sitio web de Herbarium.</span><span class="en">I build and maintain this portfolio with Claude Code, using my own skills for design and content and publishing on GitHub Pages, and I apply the same workflow to the Herbarium website.</span></p>
+        <div class="chips"><span>Claude Code</span><span>Skills</span><span>GitHub Pages</span><span>Git</span></div>
+      </article>
     </div>
   </div>
 </section>
@@ -654,6 +661,8 @@
       <h2><span class="es">¿Hablamos de seguridad, Copilot o <em>automatización?</em></span><span class="en">Let's talk security, Copilot or <em>automation.</em></span></h2>
     </div>
     <div class="actions reveal" style="--i:1">
+      <button class="btn btn-line copy-mail" type="button" data-mail="kevinjosuesalazarguevara@gmail.com" aria-label="Copiar correo / Copy email"><svg class="ico" viewBox="0 0 256 256" aria-hidden="true"><rect x="32" y="56" width="192" height="144" rx="8"/><polyline points="224 56 128 144 32 56"/></svg><span class="mail-txt">kevinjosuesalazarguevara@gmail.com</span></button>
+      <a class="btn btn-line" href="assets/cv/CV_Kevin_Salazar_Guevara_EN.pdf" download><svg class="ico" viewBox="0 0 256 256" aria-hidden="true"><line x1="128" y1="40" x2="128" y2="152"/><polyline points="80 104 128 152 176 104"/><path d="M216 152v56a8 8 0 0 1-8 8H48a8 8 0 0 1-8-8v-56"/></svg><span class="es">Descargar CV</span><span class="en">Download CV</span></a>
       <a class="btn btn-line" href="https://github.com/kevinjosuesalazarguevara-ctrl" target="_blank" rel="noopener"><i class="ph ph-github-logo" aria-hidden="true"></i>GitHub</a>
       <a class="btn btn-green" href="https://linkedin.com/in/kevin-salazar-guevara-56b95b25a" target="_blank" rel="noopener"><i class="ph ph-linkedin-logo" aria-hidden="true"></i>LinkedIn</a>
     </div>
@@ -679,6 +688,20 @@
       });
     });
 
+
+    // Copiar correo
+    document.querySelectorAll('.copy-mail').forEach(function (b) {
+      b.addEventListener('click', function () {
+        var mail = b.dataset.mail, txt = b.querySelector('.mail-txt');
+        function done() {
+          var orig = txt.textContent;
+          txt.textContent = root.lang === 'en' ? 'Email copied' : 'Correo copiado';
+          setTimeout(function () { txt.textContent = orig; }, 1800);
+        }
+        if (navigator.clipboard) navigator.clipboard.writeText(mail).then(done, function () { location.href = 'mailto:' + mail; });
+        else location.href = 'mailto:' + mail;
+      });
+    });
 
     // Aparición al hacer scroll + contadores
     var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;

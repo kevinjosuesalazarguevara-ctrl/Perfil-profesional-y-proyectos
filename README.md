@@ -1,101 +1,110 @@
 # Kevin Josué Salazar Guevara
 
-**Microsoft Security & Cloud Consultant** · Identidad y Zero Trust · Licenciamiento y Copilot · Power Platform e IA
-📍 San José, Costa Rica · 🌐 [Portafolio](https://kevinjosuesalazarguevara-ctrl.github.io/perfil-profesional-y-proyectos/) · 💼 [LinkedIn](https://linkedin.com/in/kevin-salazar-guevara-56b95b25a)
+**Microsoft Security & Cloud Consultant** · Identity & Zero Trust · Licensing & Copilot · Power Platform & AI
+📍 San José, Costa Rica · 🌐 [Portfolio](https://kevinjosuesalazarguevara-ctrl.github.io/perfil-profesional-y-proyectos/) · 💼 [LinkedIn](https://linkedin.com/in/kevin-salazar-guevara-56b95b25a)
 
-Consultor de soluciones Microsoft con casi 3 años de experiencia profesional y en la industria desde 2022, cuando hice mi pasantía en Intel. Pasé por análisis de datos de bienes raíces comerciales y por ingeniería senior de escalamiento en identidad de Azure hasta llegar a asesor de preventa empresarial en Accenture. Diseño arquitecturas Zero Trust con Microsoft Entra ID, Intune, Defender XDR y Purview, lidero demostraciones técnicas y ejecutivas, y construyo automatizaciones y agentes de IA con Power Automate y Copilot Studio.
+Microsoft Solutions Consultant with 3 years of professional experience, in the industry since my 2022 internship at Intel. I moved through commercial real estate data analysis and senior Azure identity escalation engineering to enterprise presales advisory at Accenture. I design Zero Trust architectures with Microsoft Entra ID, Intune, Defender XDR and Purview, lead technical and executive demos, build automations and AI agents with Power Automate and Copilot Studio, and develop with Claude Code.
 
 ---
 
-## 💼 Experiencia
+## 💼 Experience
 
 ### Expert Technology Consultant, Microsoft Solutions — Accenture
-*Sep 2025 – Actualidad*
+*Sep 2025 – Present*
 
-- Asesoría a clientes empresariales en licenciamiento de Microsoft 365, arquitectura de seguridad y adopción de Microsoft 365 Copilot, en conjunto con los equipos de cuenta de Microsoft.
-- Diseño de arquitecturas Zero Trust (Entra ID, Intune, Defender XDR, Purview) y demostraciones técnicas y ejecutivas del portafolio de Seguridad, Azure y Copilot.
-- **Hermes Automation:** ecosistema en Power Automate, Bookings, Microsoft Lists y Planner que genera tickets y tareas automáticamente desde nuevas reservas y envía recordatorios diarios de llamadas vencidas por Outlook y Teams.
-- **Hermes AI Agent:** agentes en Copilot Studio que permiten consultar en lenguaje natural, desde Teams, el estado de tickets, llamadas pendientes y resúmenes de carga de trabajo.
-- **Security Enablement:** capacitaciones internas y regionales sobre Defender XDR, Purview, Entra ID, Sentinel, Security Copilot y licenciamiento Microsoft 365 E7, incluido el equipo SAS Colombia.
-- **Inbound Campaign Management:** gestión de leads de la campaña Microsoft Accelerate con un estándar de respuesta de 24 horas.
+- Advise enterprise clients on Microsoft 365 licensing, security architecture and Microsoft 365 Copilot adoption, partnering with Microsoft account teams.
+- Design Zero Trust architectures (Entra ID, Intune, Defender XDR, Purview) and deliver technical and executive demos across the Microsoft Security, Azure and Copilot portfolio.
+- **Hermes Automation:** a Power Automate, Bookings, Microsoft Lists and Planner ecosystem that automatically creates tickets and tasks from new bookings and sends daily overdue-call reminders through Outlook and Teams.
+- **Hermes AI Agent:** Copilot Studio agents that let the team ask, in natural language from Teams, about ticket status, pending calls and workload summaries.
+- **Security Enablement:** internal and cross-regional training on Defender XDR, Purview, Entra ID, Sentinel, Security Copilot and Microsoft 365 E7 licensing, including the SAS Colombia team.
+- **Inbound Campaign Management:** handled Microsoft Accelerate campaign leads with a 24-hour response standard.
 
 ### Technical Senior Support Engineer, Microsoft Azure Identity — TeKnowledge
 *Jun 2024 – Sep 2025*
 
-- Resolución de más de 40 casos empresariales al mes sobre Microsoft Entra ID y Azure AD Connect dentro de SLA.
-- Punto de escalamiento del equipo para problemas complejos de sincronización de identidad híbrida.
-- Documentación de base de conocimiento que redujo incidentes repetidos.
+- Resolved 40+ enterprise cases per month on Microsoft Entra ID and Azure AD Connect within SLA.
+- Team escalation point for complex hybrid identity synchronization issues.
+- Authored knowledge-base documentation that reduced repeat incidents.
 
 ### Customer Service Representative, Banking — Concentrix
 *Mar 2024 – Jun 2024*
 
-- Atención de consultas de cuentas y banca digital en un entorno regulado, aplicando estándares de seguridad y confidencialidad.
+- Resolved account and digital banking inquiries in a regulated environment, applying security and confidentiality standards.
 
 ### Real Estate Data Analyst, U.S. Commercial Real Estate — Maecre
-*Ene 2024 – Abr 2024*
+*Jan 2024 – Apr 2024*
 
-- Análisis de datos de propiedades de bienes raíces comerciales en Estados Unidos y llenado de reportes de avalúo para peritos certificados, completando cerca del 80% de cada reporte antes de la revisión del perito.
+- Analyzed U.S. commercial real estate property data and prepared appraisal reports for certified appraisers, completing about 80% of each report before appraiser review.
 
-### Manufacturing Maintenance Intern (pasantía técnica) — Intel
+### Manufacturing Maintenance Intern — Intel
 *2022*
 
-- Documentación y estandarización de los procesos de mantenimiento de válvulas y maquinaria de manufactura, con procedimientos operativos (SOPs) para el equipo de mantenimiento.
+- Documented and standardized maintenance processes for valves and manufacturing equipment, creating Standard Operating Procedures (SOPs) for the maintenance team.
 
 ---
 
-## 🚀 Proyecto destacado: Comercializadora Herbarium
+## 🚀 Featured project: Comercializadora Herbarium
 
-**Digital Transformation Consultant** · *2026 – Actualidad* · Proyecto independiente
+**Digital Transformation Consultant** · *2026 – Present* · Independent project
 
-Rediseño, modernización y automatización de los procesos de negocio de la empresa con Microsoft 365, Power Platform y Claude (Anthropic).
+Redesign, modernization and automation of the company's business processes with Microsoft 365, Power Platform and Claude (Anthropic).
 
-| Frente | Qué incluye |
+| Area | Scope |
 |---|---|
-| Rediseño de procesos | Mapeo AS-IS, detección de cuellos de botella y diseño TO-BE con hoja de ruta por fases |
-| Automatización | Flujos de aprobación, notificación y captura de datos con Power Automate, Power Apps, Forms, SharePoint y Lists |
-| Inteligencia artificial | Claude y Microsoft Copilot para documentar procesos (SOPs), analizar datos y crear asistentes; Copilot Studio para agentes del negocio |
-| Gobierno y reportes | Línea base de seguridad e identidad (Entra ID, MFA, acceso condicional, Intune, Defender, Purview) y tableros en Power BI |
+| Process redesign | AS-IS mapping, bottleneck detection and TO-BE design with a phased roadmap |
+| Automation | Approval, notification and data-capture workflows with Power Automate, Power Apps, Forms, SharePoint and Lists |
+| Artificial intelligence | Claude and Microsoft Copilot to document processes (SOPs), analyze data and build assistants; Copilot Studio for business agents |
+| Governance & reporting | Security and identity baseline (Entra ID, MFA, Conditional Access, Intune, Defender, Purview) and Power BI dashboards |
+| Website | New company website in progress, built on a modern cloud stack |
 
-Detalle completo en [`proyectos/herbarium`](./proyectos/herbarium).
+Full details in [`proyectos/herbarium`](./proyectos/herbarium).
 
----
+## 🤖 AI-assisted development with Claude Code
 
-## 🛠️ Habilidades
+*2026 – Present* · Personal projects
 
-**Seguridad e identidad:** Microsoft Entra ID · Conditional Access · MFA · SSO · Identidad híbrida · Entra Connect · Zero Trust · Intune · Defender XDR · Purview · Sentinel · Security Copilot
-
-**Licenciamiento y preventa:** Microsoft 365 (E3, E5, E7, EA, CSP) · Adopción de Microsoft 365 Copilot · Demos técnicas y ejecutivas · Asesoría a clientes
-
-**Automatización e IA:** Power Automate · Power Apps · Copilot Studio · Agentes de IA · Microsoft Copilot · Claude (Anthropic) · SharePoint · Lists · Bookings · Planner · Teams · Power BI
-
-**Plataformas:** Microsoft Azure · Microsoft 365 · Power Platform · Dynamics 365
+- Build and maintain this portfolio with Claude Code, using my own design and content skills (in [`.claude/skills`](./.claude/skills)), version control on GitHub and deployment on GitHub Pages.
+- Apply the same workflow to the Comercializadora Herbarium website.
 
 ---
 
-## 🎓 Certificaciones
+## 🛠️ Skills
 
-| Estado | Certificación |
+**Security & identity:** Microsoft Entra ID · Conditional Access · MFA · SSO · Hybrid identity · Entra Connect · Zero Trust · Intune · Defender XDR · Purview · Sentinel · Security Copilot
+
+**Licensing & presales:** Microsoft 365 (E3, E5, E7, EA, CSP) · Microsoft 365 Copilot adoption · Technical and executive demos · Customer advisory
+
+**Automation & AI:** Power Automate · Power Apps · Copilot Studio · AI agents · Microsoft Copilot · Claude (Anthropic) · Claude Code · SharePoint · Lists · Bookings · Planner · Teams · Power BI
+
+**Platforms:** Microsoft Azure · Microsoft 365 · Power Platform · Dynamics 365 · GitHub Pages
+
+---
+
+## 🎓 Certifications
+
+| Status | Certification |
 |---|---|
-| 🔄 En curso | SC-300: Identity and Access Administrator Associate |
-| 🔄 En curso | AZ-104: Azure Administrator Associate |
-| 📅 Planeada | SC-200: Security Operations Analyst Associate |
+| 🔄 In progress | SC-300: Identity and Access Administrator Associate |
+| 🔄 In progress | AZ-104: Azure Administrator Associate |
+| 📅 Planned | SC-200: Security Operations Analyst Associate |
 | ✅ | SC-900: Security, Compliance, and Identity Fundamentals |
 | ✅ | AZ-900: Azure Fundamentals |
 | ✅ | MS-900: Microsoft 365 Fundamentals |
 | ✅ | MB-910: Dynamics 365 Fundamentals (CRM) |
+| ✅ | Claude 101 — Anthropic Academy (2026) |
 | ✅ | AI Fluency: Framework and Foundations — Anthropic Academy (2025) |
 | ✅ | Providing Best in Class Unified Support for Enterprise Customers — QA Ltd |
 | ✅ | Cisco Networking Academy: Introduction to IoT · IT Essentials |
 
-## 🏫 Formación
+## 🏫 Education
 
-- **Bachillerato en Ingeniería en Sistemas de Computación** — Universidad Fidélitas *(2023 – Actualidad)*
-- **Técnico en Electrónica** — CTP Don Bosco *(2020 – 2022)*
+- **Bachelor's Degree in Computer Systems Engineering** — Universidad Fidélitas *(2023 – Present)*
+- **Associate Degree in Electronics** — CTP Don Bosco *(2020 – 2022)*
 
-## 🌐 Idiomas
+## 🌐 Languages
 
-Español (nativo) · Inglés (C1)
+Spanish (native) · English (C1)
 
 ---
 
-📫 Contacto: [LinkedIn](https://linkedin.com/in/kevin-salazar-guevara-56b95b25a)
+📫 Contact: kevinjosuesalazarguevara@gmail.com · [LinkedIn](https://linkedin.com/in/kevin-salazar-guevara-56b95b25a) · 📄 [Download CV (PDF)](./assets/cv/CV_Kevin_Salazar_Guevara_EN.pdf)

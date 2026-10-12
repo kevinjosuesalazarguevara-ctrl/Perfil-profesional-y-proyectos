@@ -66,6 +66,8 @@ Full details in [`proyectos/herbarium`](./proyectos/herbarium).
 - Build and maintain this portfolio with Claude Code, using my own design and content skills (in [`.claude/skills`](./.claude/skills)), version control on GitHub and deployment on GitHub Pages.
 - Apply the same workflow to the Comercializadora Herbarium website.
 
+More in [`proyectos/claude-code`](./proyectos/claude-code). Hermes case study: [`proyectos/hermes`](./proyectos/hermes).
+
 ---
 
 ## 🛠️ Skills
@@ -107,4 +109,6 @@ Spanish (native) · English (C1)
 
 ---
 
-📫 Contact: kevinjosuesalazarguevara@gmail.com · [LinkedIn](https://linkedin.com/in/kevin-salazar-guevara-56b95b25a) · 📄 [Download CV (PDF)](./assets/cv/CV_Kevin_Salazar_Guevara_EN.pdf)
+📫 Contact: kevinjosuesalazarguevara@gmail.com · [LinkedIn](https://linkedin.com/in/kevin-salazar-guevara-56b95b25a)
+
+<sub>Repository structure: `index.html` (site) · `proyectos/` (case studies) · `assets/` (images, logos, fonts, icons) · `.claude/skills/` (Claude Code skills) · see [`CLAUDE.md`](./CLAUDE.md) and [`LICENSE`](./LICENSE).</sub>

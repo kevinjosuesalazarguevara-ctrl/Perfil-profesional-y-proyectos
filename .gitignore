@@ -1,0 +1,26 @@
+# Sistema operativo y editores
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+
+# Dependencias y builds
+node_modules/
+dist/
+*.log
+
+# Secretos: nunca subir
+.env
+.env.*
+*.pem
+*.key
+secrets.*
+
+# Documentos personales: no se publican en este repositorio
+*.docx
+*.pdf
+CV*
+
+# Capturas de verificación locales
+screenshots/

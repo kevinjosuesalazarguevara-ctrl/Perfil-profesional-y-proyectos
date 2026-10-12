@@ -14,7 +14,8 @@ Skill para mantener y mejorar el portafolio web y el perfil de GitHub de Kevin J
 | `index.html` | Portafolio de una sola página (GitHub Pages, rama `main`, raíz) |
 | `README.md` | Portada del perfil en GitHub (mismo contenido que el portafolio, en Markdown) |
 | `proyectos/<nombre>/README.md` | Ficha de cada proyecto; agregarlo también al índice `proyectos/README.md` |
-| `assets/` | Imágenes, íconos y animaciones (crear si no existe) |
+| `assets/` | `img/` (foto, og-image), `logos/`, `fonts/`, `icons/phosphor/` |
+| `CLAUDE.md` | Reglas del repo para Claude Code (estructura, privacidad, publicación) |
 
 **Regla de consistencia:** cualquier cambio de contenido (experiencia, proyecto, certificación) se aplica en `index.html` **y** en `README.md`. Si el cambio también afecta el CV, avisar al usuario para actualizar el .docx.
 
@@ -29,11 +30,11 @@ Antes de cualquier cambio visual (rediseño, nueva sección, animaciones), carga
 - Paleta (tema oscuro único, a propósito): fondo `#07090a`, superficies `#0f1513` / `#141c19`, líneas `#1d2723`, texto `#e4ece7`, secundario `#8b9a92`, verde `#4fd98f` (texto sobre verde: `#05150d`), verde profundo `#1f8a57`.
 - Fondo: rejilla de puntos fija con un "escáner" verde que baja según el scroll (`animation-timeline: scroll(root)`, con animación lenta de respaldo). La capa `.bg` va en `z-index: 0` y el contenido en `z-index: 1`.
 - Tipografías: Geist y Geist Mono autoalojadas en `assets/fonts/` (OFL). No usar Fraunces ni Inter.
-- Íconos: Phosphor regular en `assets/phosphor/`; `style.css` incluye solo los íconos en uso (regenerar al agregar uno).
-- Logos de empresas en `assets/logos/`: Accenture y Anthropic vienen de Simple Icons (CC0) y van inline como SVG. Tek Experts y Concentrix se cargan desde `tek-experts.png` y `concentrix.png` si existen; si no, se muestra el nombre. No dibujar logos a mano.
+- Íconos: Phosphor regular en `assets/icons/phosphor/`; `style.css` incluye solo los íconos en uso (regenerar al agregar uno).
+- Logos de empresas en `assets/logos/`: Accenture y Anthropic vienen de Simple Icons (CC0) y van inline como SVG en `index.html` (no hay archivo). Tek Experts y Concentrix se cargan desde `tek-experts.png` y `concentrix.png` si existen; si no, se muestra el nombre. No dibujar logos a mano.
 - Bilingüe: cada texto visible lleva `<span class="es">` y `<span class="en">`; al agregar contenido, escribir ambos idiomas.
 - Forma: interactivos en pill (999px), paneles 16px, recuadros de logo 10px.
-- Foto de perfil en `assets/kevin.webp`: recorte con fondo transparente (fondo original eliminado con el modelo U2Net human-seg), dentro de un disco con fondo verde oscuro y anillo orbital. Si no existe, el hero muestra las iniciales.
+- Foto de perfil en `assets/img/kevin.webp`: recorte con fondo transparente (fondo original eliminado con el modelo U2Net human-seg), dentro de un disco con fondo verde oscuro y anillo orbital. Si no existe, el hero muestra las iniciales.
 - Bajo el hero va "Mi stack, capa por capa": cinco capas Zero Trust (identidad, dispositivos, datos y amenazas, procesos, IA) que un haz verde recorre cada 10 s; reemplaza al ticker. En móvil se desliza en horizontal.
 - Sin guiones largos (—) ni medios (–) en el texto visible.
 
@@ -60,7 +61,7 @@ Si el conector no está activo en la sesión, hacer el trabajo con HTML, CSS y S
 
 ## Privacidad
 
-El repositorio es público. No publicar teléfono ni correo personal en `index.html` ni en `README.md`; el contacto es LinkedIn y GitHub, salvo que Kevin pida lo contrario.
+El repositorio es público. Kevin pidió mostrar su correo en el sitio y el README; el teléfono no se publica. Tampoco se suben al repositorio: el CV (ni .docx ni .pdf), datos o precios de clientes, propuestas ni la infraestructura técnica de los proyectos de clientes (por ejemplo, qué base de datos u hosting usa Herbarium). Ver `CLAUDE.md`.
 
 ## Verificación antes de subir
 

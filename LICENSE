@@ -1,0 +1,40 @@
+Copyright (c) 2026 Kevin Josué Salazar Guevara
+
+This repository contains two kinds of material, licensed differently.
+
+1. Code (MIT License)
+
+The HTML, CSS and JavaScript source code of the portfolio site (index.html) may be
+reused under the MIT License:
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy of
+  this software and associated documentation files (the "Software"), to deal in the
+  Software without restriction, including without limitation the rights to use, copy,
+  modify, merge, publish, distribute, sublicense, and/or sell copies of the Software,
+  and to permit persons to whom the Software is furnished to do so, subject to the
+  following conditions:
+
+  The above copyright notice and this permission notice shall be included in all
+  copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,
+  INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A
+  PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+  HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF
+  CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE
+  OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+2. Personal content (all rights reserved)
+
+The written content (biography, experience, project descriptions, README text),
+the profile photo (assets/img/kevin.webp) and the share image (assets/img/og-image.png)
+are personal material of Kevin Josué Salazar Guevara. All rights reserved; they may
+not be reused without permission.
+
+3. Third-party material
+
+- Company logos in assets/logos/ and inline in index.html belong to their respective
+  owners and are shown only to identify former and current employers.
+- Geist and Geist Mono fonts: SIL Open Font License (assets/fonts/LICENSE.txt).
+- Phosphor Icons: MIT License (assets/icons/phosphor/LICENSE).
+- taste-skill: MIT License (.claude/skills/taste-skill/LICENSE).

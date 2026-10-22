@@ -1,0 +1,13 @@
+{
+  "name": "pura-web-landing",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "check": "tsc --noEmit",
+    "preview": "tsc && node scripts/inline.mjs"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.0"
+  }
+}

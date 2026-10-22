@@ -20,8 +20,8 @@ let html = readFileSync('index.html', 'utf8')
 const placeholder = (url) => {
   let h = 0;
   for (const c of url) h = (h * 31 + c.charCodeAt(0)) % 360;
-  const hue = 130 + (h % 50);
-  const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="hsl(${hue} 38% 32%)"/><stop offset="1" stop-color="hsl(${hue + 25} 45% 16%)"/></linearGradient></defs><rect width="800" height="1000" fill="url(#g)"/></svg>`;
+  const l = 30 + (h % 12);
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="hsl(0 0% ${l}%)"/><stop offset="1" stop-color="hsl(0 0% ${l - 14}%)"/></linearGradient></defs><rect width="800" height="1000" fill="url(#g)"/></svg>`;
   return `data:image/svg+xml;base64,${Buffer.from(svg).toString('base64')}`;
 };
 const finalHtml = html.replace(/https:\/\/picsum\.photos\/[^"]+/g, placeholder);

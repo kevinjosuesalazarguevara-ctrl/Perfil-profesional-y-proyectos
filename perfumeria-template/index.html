@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es" data-lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Casa Esencia</title>
+<meta name="description" content="Tienda de perfumes: colección, notas olfativas y pedidos por WhatsApp.">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="assets/logo/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="src/styles.css">
+</head>
+<body>
+<a class="skip" href="#coleccion"><span class="es">Saltar al contenido</span><span class="en">Skip to content</span></a>
+
+<header class="bar">
+  <div class="bar-in">
+    <a href="#top" class="brand"><svg class="mark" viewBox="0 0 40 40" aria-hidden="true"><path d="M20 4c5.500 7 9.500 11.500 9.500 17.500a9.500 9.500 0 0 1-19 0C10.500 15.500 14.500 11 20 4z" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/><circle cx="20" cy="22" r="2.800" fill="var(--accent)"/></svg>Casa Esencia</a>
+    <nav class="links" aria-label="Principal">
+      <a href="#coleccion"><span class="es">Colección</span><span class="en">Collection</span></a>
+      <a href="#notas"><span class="es">Notas</span><span class="en">Notes</span></a>
+      <a href="#historia"><span class="es">Historia</span><span class="en">Story</span></a>
+      <a href="#contacto"><span class="es">Contacto</span><span class="en">Contact</span></a>
+    </nav>
+    <div class="bar-end">
+      <div class="lang" role="group" aria-label="Idioma"><button type="button" data-set="es">ES</button><button type="button" data-set="en">EN</button></div>
+      <button type="button" class="bag-btn" id="bag-btn" aria-controls="bag" aria-expanded="false"><span class="es">Bolsa</span><span class="en">Bag</span> <b id="bag-count">0</b></button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="hero-copy">
+      <span class="eyebrow in"><span class="es">Perfumería</span><span class="en">Fragrance house</span></span>
+      <h1 class="in"><span class="es">Perfumes que se recuerdan.</span><span class="en">Perfumes you remember.</span></h1>
+      <p class="lede in"><span class="es">Fragancias con notas de cítricos, flores y maderas, listas para pedir por WhatsApp.</span><span class="en">Fragrances with notes of citrus, flowers and woods, ready to order on WhatsApp.</span></p>
+      <div class="in"><a href="#coleccion" class="btn btn-primary"><span class="es">Ver colección</span><span class="en">See collection</span></a></div>
+    </div>
+    <div class="hero-img"><img src="assets/img/perfume-hero.webp" width="1024" height="1280" alt="Frasco de perfume de vidrio ámbar sobre piedra clara" fetchpriority="high"></div>
+  </section>
+
+  <section id="coleccion">
+    <div class="wrap">
+      <h2 class="rv"><span class="es">Colección</span><span class="en">Collection</span></h2>
+      <div class="chips rv" role="group" aria-label="Filtrar">
+        <button type="button" class="chip" data-filter="all" aria-pressed="true"><span class="es">Todos</span><span class="en">All</span></button>
+        <button type="button" class="chip" data-filter="f" aria-pressed="false"><span class="es">Femenino</span><span class="en">Women</span></button>
+        <button type="button" class="chip" data-filter="m" aria-pressed="false"><span class="es">Masculino</span><span class="en">Men</span></button>
+        <button type="button" class="chip" data-filter="u" aria-pressed="false"><span class="es">Unisex</span><span class="en">Unisex</span></button>
+      </div>
+      <!-- Productos de muestra: reemplazar nombres, notas, precios (data-price, en colones) e imágenes -->
+      <div class="grid" id="grid">
+        <article class="prod big rv" data-cat="u" data-id="noche-cafe" data-name="Noche de Café" data-price="42000">
+          <div class="ph-img"><img src="assets/img/perfume-hero.webp" width="1024" height="1280" alt="Frasco ámbar Noche de Café" loading="lazy" style="--pos:50% 50%;--zoom:1"></div>
+          <div class="info"><div><h3>Noche de Café</h3><p><span class="es">Café, vainilla y ámbar.</span><span class="en">Coffee, vanilla and amber.</span></p></div><span class="price"></span></div>
+          <button type="button" class="btn btn-ghost" data-add><span class="es">Agregar</span><span class="en">Add</span></button>
+        </article>
+        <article class="prod rv" data-cat="u" data-id="brisa-citrica" data-name="Brisa Cítrica" data-price="36000">
+          <div class="ph-img"><img src="assets/img/perfume-lineup.webp" width="1024" height="1024" alt="Frasco Brisa Cítrica" loading="lazy" style="--pos:18% 55%;--zoom:2.4"></div>
+          <div class="info"><div><h3>Brisa Cítrica</h3><p><span class="es">Bergamota, naranja y vetiver.</span><span class="en">Bergamot, orange and vetiver.</span></p></div><span class="price"></span></div>
+          <button type="button" class="btn btn-ghost" data-add><span class="es">Agregar</span><span class="en">Add</span></button>
+        </article>
+        <article class="prod rv" data-cat="f" data-id="jazmin-oscuro" data-name="Jazmín Oscuro" data-price="39000">
+          <div class="ph-img"><img src="assets/img/perfume-lineup.webp" width="1024" height="1024" alt="Frasco Jazmín Oscuro" loading="lazy" style="--pos:50% 50%;--zoom:2.4"></div>
+          <div class="info"><div><h3>Jazmín Oscuro</h3><p><span class="es">Jazmín, ylang y sándalo.</span><span class="en">Jasmine, ylang and sandalwood.</span></p></div><span class="price"></span></div>
+          <button type="button" class="btn btn-ghost" data-add><span class="es">Agregar</span><span class="en">Add</span></button>
+        </article>
+        <article class="prod rv" data-cat="m" data-id="madera-clara" data-name="Madera Clara" data-price="38000">
+          <div class="ph-img"><img src="assets/img/perfume-lineup.webp" width="1024" height="1024" alt="Frasco Madera Clara" loading="lazy" style="--pos:84% 55%;--zoom:2.4"></div>
+          <div class="info"><div><h3>Madera Clara</h3><p><span class="es">Cedro, pimienta y musgo.</span><span class="en">Cedar, pepper and moss.</span></p></div><span class="price"></span></div>
+          <button type="button" class="btn btn-ghost" data-add><span class="es">Agregar</span><span class="en">Add</span></button>
+        </article>
+        <article class="prod rv" data-cat="f" data-id="flor-naranjo" data-name="Flor de Naranjo" data-price="35000">
+          <div class="ph-img"><img src="assets/img/perfume-notes.webp" width="1200" height="800" alt="Flor de Naranjo, con naranja seca y jazmín" loading="lazy" style="--pos:70% 50%;--zoom:1.6"></div>
+          <div class="info"><div><h3>Flor de Naranjo</h3><p><span class="es">Azahar, neroli y almizcle.</span><span class="en">Orange blossom, neroli and musk.</span></p></div><span class="price"></span></div>
+          <button type="button" class="btn btn-ghost" data-add><span class="es">Agregar</span><span class="en">Add</span></button>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="notes" id="notas">
+    <div class="wrap notes-grid">
+      <div class="notes-img rv"><img src="assets/img/perfume-notes.webp" width="1200" height="800" alt="Naranja seca, canela, jazmín y sándalo sobre lino" loading="lazy"></div>
+      <div>
+        <h2 class="rv"><span class="es">Cómo leer un perfume.</span><span class="en">How to read a perfume.</span></h2>
+        <details open>
+          <summary><span class="es">Notas de salida</span><span class="en">Top notes</span></summary>
+          <p><span class="es">Lo primero que se percibe. Suelen ser cítricos y frescas, y se disipan en pocos minutos.</span><span class="en">The first impression. Usually citrus and fresh, they fade within minutes.</span></p>
+        </details>
+        <details>
+          <summary><span class="es">Notas de corazón</span><span class="en">Heart notes</span></summary>
+          <p><span class="es">El carácter del perfume. Flores y especias que aparecen cuando se van las de salida.</span><span class="en">The character of the perfume. Flowers and spices that appear as the top notes leave.</span></p>
+        </details>
+        <details>
+          <summary><span class="es">Notas de fondo</span><span class="en">Base notes</span></summary>
+          <p><span class="es">Lo que queda sobre la piel durante horas. Maderas, ámbar y almizcle.</span><span class="en">What stays on the skin for hours. Woods, amber and musk.</span></p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="story" id="historia">
+    <div class="wrap">
+      <!-- Texto de ejemplo: reemplazar por la historia real de la marca -->
+      <h2 class="rv"><span class="es">Cada frasco empieza con una idea.</span><span class="en">Every bottle starts with an idea.</span></h2>
+      <p class="lede rv"><span class="es">Aquí va la historia de la marca: quién la creó, por qué y qué la hace distinta.</span><span class="en">The brand story goes here: who created it, why, and what makes it different.</span></p>
+    </div>
+  </section>
+
+  <section class="trust">
+    <div class="wrap trust-grid">
+      <h2 class="rv"><span class="es">Compra con confianza.</span><span class="en">Shop with confidence.</span></h2>
+      <ul>
+        <li class="rv"><h3><span class="es">Envíos a todo el país</span><span class="en">Nationwide delivery</span></h3><p><span class="es">Coordinamos la entrega contigo por WhatsApp.</span><span class="en">We arrange delivery with you on WhatsApp.</span></p></li>
+        <li class="rv"><h3><span class="es">Pago flexible</span><span class="en">Flexible payment</span></h3><p><span class="es">Tarjeta o SINPE Móvil.</span><span class="en">Card or SINPE Móvil.</span></p></li>
+        <li class="rv"><h3><span class="es">Asesoría personal</span><span class="en">Personal advice</span></h3><p><span class="es">Te ayudamos a elegir según tus gustos.</span><span class="en">We help you choose based on your taste.</span></p></li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="contacto">
+    <div class="wrap contact-grid">
+      <div>
+        <h2 class="rv"><span class="es">Novedades y lanzamientos.</span><span class="en">News and new releases.</span></h2>
+        <p class="lede rv"><span class="es">Déjanos tu correo y te avisamos cuando llegue una fragancia nueva.</span><span class="en">Leave your email and we will tell you when a new fragrance arrives.</span></p>
+      </div>
+      <form id="news" class="rv" novalidate>
+        <div class="field">
+          <label for="correo"><span class="es">Correo</span><span class="en">Email</span></label>
+          <input id="correo" type="email" autocomplete="email" required>
+          <span class="err"><span class="es">Escribe un correo válido.</span><span class="en">Please enter a valid email.</span></span>
+        </div>
+        <button type="submit" class="btn btn-primary"><span class="es">Suscribirme</span><span class="en">Subscribe</span></button>
+        <p class="sent" role="status"><span class="es">Gracias. Te avisaremos de las novedades.</span><span class="en">Thank you. We will let you know about new releases.</span></p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<aside class="bag" id="bag" aria-label="Bolsa" hidden>
+  <div class="bag-head"><h2><span class="es">Tu bolsa</span><span class="en">Your bag</span></h2><button type="button" id="bag-close" aria-label="Cerrar">&times;</button></div>
+  <p class="empty" id="bag-empty"><span class="es">Aún no has agregado perfumes. Elige uno de la colección.</span><span class="en">You have not added any perfumes yet. Pick one from the collection.</span></p>
+  <ul id="bag-list"></ul>
+  <div class="bag-foot">
+    <p class="total"><span class="es">Total</span><span class="en">Total</span> <b id="bag-total">₡0</b></p>
+    <a class="btn btn-primary" id="bag-wa" href="https://wa.me/" target="_blank" rel="noopener" aria-disabled="true"><span class="es">Pedir por WhatsApp</span><span class="en">Order on WhatsApp</span></a>
+  </div>
+</aside>
+
+<footer>
+  <div class="wrap foot-grid">
+    <div><a href="#top" class="brand"><svg class="mark" viewBox="0 0 40 40" aria-hidden="true"><path d="M20 4c5.500 7 9.500 11.500 9.500 17.500a9.500 9.500 0 0 1-19 0C10.500 15.500 14.500 11 20 4z" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/><circle cx="20" cy="22" r="2.800" fill="var(--accent)"/></svg>Casa Esencia</a>
+      <p><span class="es">Perfumes seleccionados, pedidos por WhatsApp.</span><span class="en">Selected perfumes, ordered on WhatsApp.</span></p></div>
+    <nav class="foot-links" aria-label="Pie">
+      <a href="#coleccion"><span class="es">Colección</span><span class="en">Collection</span></a>
+      <a href="#notas"><span class="es">Notas</span><span class="en">Notes</span></a>
+      <a href="#historia"><span class="es">Historia</span><span class="en">Story</span></a>
+    </nav>
+    <div class="foot-links"><a data-wa href="https://wa.me/">WhatsApp</a></div>
+  </div>
+  <div class="wrap foot-base">Casa Esencia &copy; <span id="year"></span></div>
+</footer>
+
+<script type="module" src="dist/main.js"></script>
+</body>
+</html>

@@ -2,6 +2,9 @@ type Lang = 'es' | 'en';
 
 const root = document.documentElement;
 
+// Reemplazar por el número real (código de país 506 + número, sin signos)
+const WHATSAPP = '50600000000';
+
 function setLang(lang: Lang): void {
   root.dataset.lang = lang;
   root.lang = lang;
@@ -13,7 +16,7 @@ function setLang(lang: Lang): void {
 function initLang(): void {
   const start: Lang = (navigator.language || 'es').toLowerCase().startsWith('en') ? 'en' : 'es';
   setLang(start);
-  document.querySelectorAll<HTMLButtonElement>('.lang button').forEach((btn) => {
+  document.querySelectorAll<HTMLButtonElement>('[data-set]').forEach((btn) => {
     btn.addEventListener('click', () => setLang(btn.dataset.set as Lang));
   });
 }
@@ -64,7 +67,27 @@ function initForm(): void {
   });
 }
 
+function initRail(): void {
+  const rail = document.getElementById('rail');
+  document.querySelectorAll<HTMLButtonElement>('[data-rail]').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const dir = Number(btn.dataset.rail);
+      rail?.scrollBy({ left: dir * 400, behavior: 'smooth' });
+    });
+  });
+}
+
+function initWhatsApp(): void {
+  document.querySelectorAll<HTMLAnchorElement>('[data-wa]').forEach((a) => {
+    a.href = `https://wa.me/${WHATSAPP}`;
+    a.target = '_blank';
+    a.rel = 'noopener';
+  });
+}
+
 initLang();
+initRail();
+initWhatsApp();
 initReveal();
 initForm();
 const year = document.getElementById('year');

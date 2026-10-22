@@ -7,16 +7,18 @@
 <meta name="description" content="Diseño de sitios web a la medida para comercios en Costa Rica y el extranjero, en español e inglés.">
 <meta name="color-scheme" content="light dark">
 <link rel="stylesheet" href="../assets/icons/phosphor/style.css">
+<link rel="icon" href="assets/logo/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="src/styles.css">
 </head>
 <body>
+<a class="skip" href="#servicios"><span class="es">Saltar al contenido</span><span class="en">Skip to content</span></a>
 
 <header>
   <nav class="nav" aria-label="Principal">
-    <a href="#top" class="brand">Pura<span>.</span>Web</a>
+    <a href="#top" class="brand"><svg class="mark" viewBox="0 0 40 40" aria-hidden="true"><path fill="currentColor" fill-rule="evenodd" d="M10 6h12a9 9 0 0 1 0 18h-6v10h-6zM16 12v6h6a3 3 0 0 0 0-6z"/><circle cx="31.5" cy="31.5" r="3.5" fill="var(--accent)"/></svg>Pura.Web</a>
     <div class="links">
       <a href="#servicios"><span class="es">Servicios</span><span class="en">Services</span></a>
-      <a href="#proceso"><span class="es">Proceso</span><span class="en">Process</span></a>
+      <a href="#paquetes"><span class="es">Paquetes</span><span class="en">Packages</span></a>
       <a href="#trabajos"><span class="es">Trabajos</span><span class="en">Work</span></a>
       <a href="#preguntas"><span class="es">Preguntas</span><span class="en">FAQ</span></a>
     </div>
@@ -48,8 +50,8 @@
         </div>
       </div>
       <div class="hero-art">
-        <div class="main"><img src="https://picsum.photos/seed/cafe-costa-rica-mostrador/900/1125" width="900" height="1125" alt="Mostrador de una cafetería atendida por su dueña" fetchpriority="high"></div>
-        <div class="side"><img src="https://picsum.photos/seed/boutique-tropical-vitrina/500/500" width="500" height="500" alt="Vitrina de una boutique"></div>
+        <div class="main"><img src="assets/img/hero-main.webp" width="900" height="1125" alt="Mostrador de una cafetería atendida por su dueña" fetchpriority="high"></div>
+        <div class="side"><img src="assets/img/hero-side.webp" width="500" height="500" alt="Vitrina de una boutique"></div>
       </div>
     </div>
   </section>
@@ -63,12 +65,22 @@
     </div>
   </div>
 
+  <section class="clients" aria-label="Clientes">
+    <div class="wrap clients-row">
+      <p class="rv"><span class="es">Clientes</span><span class="en">Clients</span></p>
+      <ul class="rv">
+        <li>Herbarium</li>
+        <li>Casa Esencia</li>
+      </ul>
+    </div>
+  </section>
+
   <section id="servicios">
     <div class="wrap">
       <h2 class="rv"><span class="es">Todo lo que tu comercio necesita para vender.</span><span class="en">Everything your shop needs to sell.</span></h2>
       <div class="bento">
         <article class="cell c1 rv">
-          <img src="https://picsum.photos/seed/artesania-taller-diseno/1200/800" width="1200" height="800" alt="Taller de diseño con bocetos de sitios web" loading="lazy">
+          <img src="assets/img/work-desk.webp" width="1200" height="800" alt="Taller de diseño con bocetos de sitios web" loading="lazy">
           <i class="ph ph-sparkle"></i>
           <div>
             <h3><span class="es">Sitio a la medida</span><span class="en">Custom site</span></h3>
@@ -87,6 +99,7 @@
           <div>
             <h3><span class="es">Español e inglés</span><span class="en">Spanish and English</span></h3>
             <p><span class="es">Tus clientes cambian de idioma con un clic.</span><span class="en">Your customers switch language in one click.</span></p>
+            <div class="lang demo-lang" role="group" aria-label="Idioma"><button type="button" data-set="es">ES</button><button type="button" data-set="en">EN</button></div>
           </div>
         </article>
         <article class="cell c4 rv">
@@ -132,6 +145,43 @@
     </div>
   </section>
 
+  <section id="paquetes">
+    <div class="wrap">
+      <h2 class="rv"><span class="es">Elige tu punto de partida.</span><span class="en">Choose your starting point.</span></h2>
+      <p class="lede rv"><span class="es">El precio depende del alcance. Te lo confirmamos por escrito antes de empezar.</span><span class="en">Pricing depends on scope. We confirm it in writing before we start.</span></p>
+      <div class="pk-grid">
+        <article class="pk pk-main rv">
+          <h3><span class="es">Tienda</span><span class="en">Store</span></h3>
+          <p><span class="es">Para vender en línea desde el primer día.</span><span class="en">To sell online from day one.</span></p>
+          <ul>
+            <li><i class="ph ph-check-circle"></i><span class="es">Todo lo de Presencia</span><span class="en">Everything in Presence</span></li>
+            <li><i class="ph ph-check-circle"></i><span class="es">Catálogo y carrito de compras</span><span class="en">Catalog and shopping cart</span></li>
+            <li><i class="ph ph-check-circle"></i><span class="es">Pagos locales e internacionales</span><span class="en">Local and international payments</span></li>
+            <li><i class="ph ph-check-circle"></i><span class="es">Panel para actualizar tus productos</span><span class="en">Panel to update your products</span></li>
+          </ul>
+        </article>
+        <div class="pk-side">
+          <article class="pk rv">
+            <h3><span class="es">Presencia</span><span class="en">Presence</span></h3>
+            <p><span class="es">Para que te encuentren y te contacten.</span><span class="en">So people can find and contact you.</span></p>
+            <ul>
+              <li><i class="ph ph-check-circle"></i><span class="es">Inicio, servicios y contacto</span><span class="en">Home, services and contact</span></li>
+              <li><i class="ph ph-check-circle"></i><span class="es">Mapa, horarios y WhatsApp</span><span class="en">Map, hours and WhatsApp</span></li>
+            </ul>
+          </article>
+          <article class="pk rv">
+            <h3><span class="es">A la medida</span><span class="en">Bespoke</span></h3>
+            <p><span class="es">Para necesidades que no caben en una plantilla.</span><span class="en">For needs that do not fit a template.</span></p>
+            <ul>
+              <li><i class="ph ph-check-circle"></i><span class="es">Reservas o citas en línea</span><span class="en">Online bookings or appointments</span></li>
+              <li><i class="ph ph-check-circle"></i><span class="es">Integraciones con tus sistemas</span><span class="en">Integrations with your systems</span></li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section id="proceso">
     <div class="wrap process-grid">
       <div class="sticky">
@@ -139,24 +189,31 @@
         <p class="lede rv"><span class="es">Un proceso claro, con una persona que te acompaña de principio a fin.</span><span class="en">A clear process, with one person guiding you from start to finish.</span></p>
       </div>
       <div class="steps">
-        <div class="step rv"><i class="ph ph-fingerprint"></i><h3><span class="es">Conversamos</span><span class="en">We talk</span></h3><p><span class="es">Entendemos tu negocio, tus clientes y lo que quieres lograr.</span><span class="en">We learn about your business, your customers and your goals.</span></p></div>
-        <div class="step rv"><i class="ph ph-sparkle"></i><h3><span class="es">Diseñamos</span><span class="en">We design</span></h3><p><span class="es">Te mostramos el diseño antes de construir nada.</span><span class="en">You see the design before anything gets built.</span></p></div>
-        <div class="step rv"><i class="ph ph-devices"></i><h3><span class="es">Construimos</span><span class="en">We build</span></h3><p><span class="es">Programamos tu sitio, con ajustes según tus comentarios.</span><span class="en">We code your site and adjust it from your feedback.</span></p></div>
-        <div class="step rv"><i class="ph ph-shield-check"></i><h3><span class="es">Publicamos</span><span class="en">We launch</span></h3><p><span class="es">Configuramos dominio y hosting, y te explicamos cómo manejarlo.</span><span class="en">We set up domain and hosting, and show you how to manage it.</span></p></div>
+        <div class="step rv"><h3><span class="es">Conversamos</span><span class="en">We talk</span></h3><p><span class="es">Entendemos tu negocio, tus clientes y lo que quieres lograr.</span><span class="en">We learn about your business, your customers and your goals.</span></p></div>
+        <div class="step rv"><h3><span class="es">Diseñamos</span><span class="en">We design</span></h3><p><span class="es">Te mostramos el diseño antes de construir nada.</span><span class="en">You see the design before anything gets built.</span></p></div>
+        <div class="step rv"><h3><span class="es">Construimos</span><span class="en">We build</span></h3><p><span class="es">Programamos tu sitio, con ajustes según tus comentarios.</span><span class="en">We code your site and adjust it from your feedback.</span></p></div>
+        <div class="step rv"><h3><span class="es">Publicamos</span><span class="en">We launch</span></h3><p><span class="es">Configuramos dominio y hosting, y te explicamos cómo manejarlo.</span><span class="en">We set up domain and hosting, and show you how to manage it.</span></p></div>
       </div>
     </div>
   </section>
 
   <section id="trabajos" style="padding-top:0">
     <div class="wrap work-head">
-      <h2 class="rv"><span class="es">Ejemplos de sitios.</span><span class="en">Sample sites.</span></h2>
-      <p class="note rv"><span class="es">Muestras de demostración con negocios ficticios.</span><span class="en">Demo samples using fictional businesses.</span></p>
+      <div>
+        <h2 class="rv"><span class="es">Ejemplos de sitios.</span><span class="en">Sample sites.</span></h2>
+        <p class="note rv"><span class="es">Muestras de demostración con negocios ficticios.</span><span class="en">Demo samples using fictional businesses.</span></p>
+      </div>
+      <div class="arrows">
+        <button type="button" data-rail="-1" aria-label="Anterior">&larr;</button>
+        <button type="button" data-rail="1" aria-label="Siguiente">&rarr;</button>
+      </div>
     </div>
-    <div class="rail" tabindex="0" aria-label="Ejemplos">
-      <article class="work"><div class="shot"><img src="https://picsum.photos/seed/cafe-cerro-alto/760/950" width="760" height="950" alt="Sitio de una cafetería de montaña" loading="lazy"></div><h3>Café Cerro Alto</h3><p><span class="es">Menú, reservas y tienda de granos.</span><span class="en">Menu, bookings and a bean shop.</span></p></article>
-      <article class="work"><div class="shot"><img src="https://picsum.photos/seed/soda-la-ceiba/760/950" width="760" height="950" alt="Sitio de una soda tradicional" loading="lazy"></div><h3>Soda La Ceiba</h3><p><span class="es">Menú del día y pedidos por WhatsApp.</span><span class="en">Daily menu and WhatsApp orders.</span></p></article>
-      <article class="work"><div class="shot"><img src="https://picsum.photos/seed/boutique-tamarindo-rosa/760/950" width="760" height="950" alt="Sitio de una boutique de ropa" loading="lazy"></div><h3>Boutique Rosa Marina</h3><p><span class="es">Tienda en línea en español e inglés.</span><span class="en">Online store in Spanish and English.</span></p></article>
-      <article class="work"><div class="shot"><img src="https://picsum.photos/seed/tours-bosque-nuboso/760/950" width="760" height="950" alt="Sitio de una agencia de tours" loading="lazy"></div><h3>Tours Bosque Nuboso</h3><p><span class="es">Reservas con pago internacional.</span><span class="en">Bookings with international payment.</span></p></article>
+    <div class="rail" id="rail" tabindex="0" aria-label="Ejemplos">
+      <a class="work" href="../perfumeria-template/index.html"><div class="shot"><img src="assets/img/work-perfume.webp" width="760" height="950" alt="Sitio de una tienda de perfumes" loading="lazy"></div><h3>Casa Esencia</h3><p><span class="es">Catálogo de perfumes y pedidos.</span><span class="en">Perfume catalog and orders.</span></p></a>
+      <article class="work"><div class="shot"><img src="assets/img/work-cafe.webp" width="760" height="950" alt="Sitio de una cafetería de montaña" loading="lazy"></div><h3>Café Cerro Alto</h3><p><span class="es">Menú, reservas y tienda de granos.</span><span class="en">Menu, bookings and a bean shop.</span></p></article>
+      <article class="work"><div class="shot"><img src="assets/img/work-soda.webp" width="760" height="950" alt="Sitio de una soda tradicional" loading="lazy"></div><h3>Soda La Ceiba</h3><p><span class="es">Menú del día y pedidos por WhatsApp.</span><span class="en">Daily menu and WhatsApp orders.</span></p></article>
+      <article class="work"><div class="shot"><img src="assets/img/work-boutique.webp" width="760" height="950" alt="Sitio de una boutique de ropa" loading="lazy"></div><h3>Boutique Rosa Marina</h3><p><span class="es">Tienda en línea en español e inglés.</span><span class="en">Online store in Spanish and English.</span></p></article>
+      <article class="work"><div class="shot"><img src="assets/img/work-tours.webp" width="760" height="950" alt="Sitio de una agencia de tours" loading="lazy"></div><h3>Tours Bosque Nuboso</h3><p><span class="es">Reservas con pago internacional.</span><span class="en">Bookings with international payment.</span></p></article>
     </div>
   </section>
 
@@ -188,6 +245,7 @@
         <span class="eyebrow rv"><span class="es">Hablemos</span><span class="en">Let's talk</span></span>
         <h2 class="rv"><span class="es">Cuéntanos de tu comercio.</span><span class="en">Tell us about your shop.</span></h2>
         <p class="lede rv"><span class="es">Te respondemos con una propuesta clara para tu tipo de negocio.</span><span class="en">We reply with a clear proposal for your type of business.</span></p>
+        <p class="wa rv"><span class="es">También puedes escribirnos por</span><span class="en">You can also write to us on</span> <a data-wa href="https://wa.me/">WhatsApp</a></p>
       </div>
       <form id="form" class="rv" novalidate>
         <div class="field">
@@ -225,14 +283,23 @@
 </main>
 
 <footer>
-  <div class="wrap foot">
-    <span>Pura.Web &copy; <span id="year"></span></span>
-    <nav class="links" aria-label="Pie">
+  <div class="wrap foot-grid">
+    <div>
+      <a href="#top" class="brand"><svg class="mark" viewBox="0 0 40 40" aria-hidden="true"><path fill="currentColor" fill-rule="evenodd" d="M10 6h12a9 9 0 0 1 0 18h-6v10h-6zM16 12v6h6a3 3 0 0 0 0-6z"/><circle cx="31.5" cy="31.5" r="3.5" fill="var(--accent)"/></svg>Pura.Web</a>
+      <p><span class="es">Sitios web a la medida para comercios en Costa Rica y el extranjero.</span><span class="en">Custom websites for shops in Costa Rica and abroad.</span></p>
+    </div>
+    <nav class="foot-links" aria-label="Pie">
       <a href="#servicios"><span class="es">Servicios</span><span class="en">Services</span></a>
-      <a href="#proceso"><span class="es">Proceso</span><span class="en">Process</span></a>
+      <a href="#paquetes"><span class="es">Paquetes</span><span class="en">Packages</span></a>
       <a href="#trabajos"><span class="es">Trabajos</span><span class="en">Work</span></a>
+      <a href="#preguntas"><span class="es">Preguntas</span><span class="en">FAQ</span></a>
     </nav>
+    <div class="foot-links">
+      <a data-wa href="https://wa.me/">WhatsApp</a>
+      <a href="#contacto"><span class="es">Formulario</span><span class="en">Contact form</span></a>
+    </div>
   </div>
+  <div class="wrap foot-base">Pura.Web &copy; <span id="year"></span></div>
 </footer>
 
 <script type="module" src="dist/main.js"></script>

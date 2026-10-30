@@ -43,7 +43,6 @@ const win = (t, a, b, f = .25) => Math.min(ease(seg(t, a, a + f)), 1 - ease(seg(
 function el(tag, attrs = {}, parent = svg) { const n = document.createElementNS(NS, tag); for (const k in attrs) n.setAttribute(k, attrs[k]); parent.appendChild(n); return n; }
 const txt = (s, attrs, parent) => { const n = el('text', { 'font-family': 'Space Grotesk', 'font-weight': 700, ...attrs }, parent); n.textContent = s; return n; };
 const S = (id) => TL.scenes[id]?.start ?? 0, E = (id) => (TL.scenes[id] ? TL.scenes[id].start + TL.scenes[id].dur : 0);
-const has = (id) => !!TL.scenes[id];
 
 // Fondo: rejilla fina del sistema de marca
 const grid = el('g', { stroke: '#1E1E1E', 'stroke-width': 2 });
@@ -111,21 +110,6 @@ const pNodes = py.map((y, i) => {
   return { c, t };
 });
 
-// 8. Sitio real de DOVA en un celular (solo si existen las capturas)
-const gSite = el('g', {}, art);
-let siteImg = null, siteH = 0;
-if (has('site')) {
-  const fx = 340, fy = 270, fw = 400, fh = 820, ins = 14;
-  el('rect', { x: fx, y: fy, width: fw, height: fh, rx: 56, fill: '#0B0B0B', stroke: '#fff', 'stroke-width': 6 }, gSite);
-  const cps = el('clipPath', { id: 'sc' }, gSite); el('rect', { x: fx + ins, y: fy + ins, width: fw - 2 * ins, height: fh - 2 * ins, rx: 44 }, cps);
-  const sw = fw - 2 * ins; siteH = (window.SITE_RATIO || 4) * sw;
-  siteImg = el('image', { href: `assets/site-${TL.lang}.png`, x: fx + ins, y: fy + ins, width: sw, height: siteH, preserveAspectRatio: 'xMidYMin slice', 'clip-path': 'url(#sc)' }, gSite);
-  siteImg.dataset.base = fy + ins; siteImg.dataset.view = fh - 2 * ins;
-  gSite.dataset.fy = fy;
-  siteImg.style.clipPath = 'none';
-  const wrap = el('g', { 'clip-path': 'url(#sc)' }, gSite); wrap.appendChild(siteImg);
-}
-
 // 9. Línea que se endereza
 const gLine = el('g', {}, art);
 const path = el('polyline', { fill: 'none', stroke: '#C7FF3D', 'stroke-width': 16, 'stroke-linecap': 'round', 'stroke-linejoin': 'round' }, gLine);
@@ -151,7 +135,7 @@ const ripple = el('circle', { cx: 540, cy: 815, r: 0, fill: 'none', stroke: '#C7
 const cursor = el('path', { d: 'M0 0 L0 56 L15 43 L27 70 L40 64 L28 38 L48 38 Z', fill: '#fff', stroke: '#0B0B0B', 'stroke-width': 4, 'stroke-linejoin': 'round' }, gEnd);
 
 // Transiciones: barrido lima entre actos
-const wipeAt = ['web', 'lang', 'services', 'process', 'site', 'line', 'cta'].filter(has).map((id) => S(id));
+const wipeAt = ['web', 'lang', 'services', 'process', 'line', 'cta'].map((id) => S(id));
 const wipe = el('rect', { x: -W * 1.3, y: 0, width: W * 1.2, height: HT, fill: '#C7FF3D' });
 
 // Subtítulos estilo UGC con palabra activa
@@ -208,15 +192,6 @@ window.render = function (t) {
   const prog = last < 0 ? 0 : Math.min(3, last + seg(t, pCh[Math.max(0, last)].a, pCh[Math.max(0, last)].b));
   pLine.setAttribute('y2', py[0] + (py[3] - py[0]) * (prog / 3));
   pNodes.forEach((n, i) => { const on = last >= i; n.c.setAttribute('fill', on ? '#C7FF3D' : '#0B0B0B'); n.c.setAttribute('stroke', on ? '#C7FF3D' : '#fff'); n.t.setAttribute('fill', last === i ? '#C7FF3D' : '#fff'); n.t.setAttribute('opacity', 0.45 + 0.55 * (on ? 1 : 0)); });
-
-  // sitio real
-  if (has('site')) {
-    gSite.setAttribute('opacity', win(t, S('site'), E('site')));
-    const lt = t - S('site'), view = Number(siteImg.dataset.view), base = Number(siteImg.dataset.base);
-    const dy = -Math.max(0, siteH - view) * easeIO(seg(lt, .5, TL.scenes.site.dur - .3));
-    siteImg.setAttribute('y', base + dy);
-    gSite.setAttribute('transform', `translate(0 ${(1 - ease(seg(lt, 0, .5))) * 60})`);
-  }
 
   // línea
   l = t - S('line'); gLine.setAttribute('opacity', win(t, S('line'), E('line'), .2));

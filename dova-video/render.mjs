@@ -19,12 +19,6 @@ const page = await browser.newPage({ viewport: { width: W, height: H } });
 await page.addInitScript(({ TL, CFG }) => { window.TL = TL; window.CFG = CFG; }, { TL, CFG: { lang, format } });
 await page.goto(pathToFileURL(resolve('scene.html')).href);
 await page.evaluate(() => document.fonts.ready);
-if (TL.withSite) {
-  const ratio = await page.evaluate(() => new Promise((r) => { const i = new Image(); i.onload = () => r(i.height / i.width); i.src = `assets/site-${window.TL.lang}.png`; }));
-  await page.evaluate((r) => { window.SITE_RATIO = r; }, ratio);
-  await page.reload(); await page.evaluate((r) => { window.SITE_RATIO = r; }, ratio);
-}
-
 const total = Math.round(TL.duration * FPS);
 const ff = spawn('ffmpeg', ['-y', '-loglevel', 'error', '-f', 'image2pipe', '-framerate', String(FPS), '-i', '-',
   '-c:v', 'libx264', '-pix_fmt', 'yuv420p', '-crf', '18', '-preset', 'medium', '-movflags', '+faststart', out], { stdio: ['pipe', 'inherit', 'inherit'] });

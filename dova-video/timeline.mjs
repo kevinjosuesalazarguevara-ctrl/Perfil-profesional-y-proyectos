@@ -1,6 +1,4 @@
 // Línea de tiempo única: la usan el render (imagen) y synth.py (sonido) para quedar sincronizados.
-import { existsSync } from 'node:fs';
-
 const TEXT = {
   es: {
     hola: 'Hola, somos DOVA', estudio: 'un estudio digital', cr: 'de Costa Rica.',
@@ -8,7 +6,6 @@ const TEXT = {
     idioma: 'en español e inglés.',
     svc1: 'Sitios web y e-commerce,', svc2: 'branding,', svc3: 'automatización e IA', svc4: 'e integraciones.',
     p1: 'Escuchamos,', p2: 'diseñamos,', p3: 'construimos', p4: 'y mejoramos.',
-    s1: 'Así se ve nuestro sitio,', s2: 'claro y bilingüe.',
     l1: 'Menos vueltas,', l2: 'más posibilidades.', cta: 'Cuéntanos tu proyecto.',
     foot: 'Estudio digital bilingüe', btn: 'Hablemos',
     services: ['Sitios web y e-commerce', 'Branding', 'Automatización e IA', 'Integraciones y consultoría'],
@@ -20,7 +17,6 @@ const TEXT = {
     idioma: 'in Spanish and English.',
     svc1: 'Websites and e-commerce,', svc2: 'branding,', svc3: 'automation and AI', svc4: 'and integrations.',
     p1: 'We listen,', p2: 'design,', p3: 'build', p4: 'and improve.',
-    s1: 'This is our site,', s2: 'clear and bilingual.',
     l1: 'Fewer detours,', l2: 'more possibilities.', cta: 'Tell us about your project.',
     foot: 'Bilingual digital studio', btn: "Let's talk",
     services: ['Websites and e-commerce', 'Branding', 'Automation and AI', 'Integrations and consulting'],
@@ -29,7 +25,7 @@ const TEXT = {
 };
 
 // [id, duración, [[clave de texto, duración], ...]]
-function plan(withSite) {
+function plan() {
   const p = [
     ['intro', 4.4, [['hola', 1.6, 0.3], ['estudio', 1.3], ['cr', 1.2]]],
     ['web', 1.8, [['diseno', 1.8]]],
@@ -39,16 +35,14 @@ function plan(withSite) {
     ['services', 4.6, [['svc1', 1.4], ['svc2', 1.0], ['svc3', 1.1], ['svc4', 1.1]]],
     ['process', 4.2, [['p1', 1.0], ['p2', 1.0], ['p3', 1.1], ['p4', 1.1]]],
   ];
-  if (withSite) p.push(['site', 3.5, [['s1', 1.8], ['s2', 1.7]]]);
   p.push(['line', 2.5, [['l1', 1.1], ['l2', 1.4]]], ['cta', 2.5, [['cta', 2.5]]]);
   return p;
 }
 
 export function buildTimeline(lang = 'es') {
-  const withSite = existsSync(`assets/site-${lang}.png`);
   const scenes = {}, chunks = [];
   let t = 0;
-  for (const [id, dur, cs] of plan(withSite)) {
+  for (const [id, dur, cs] of plan()) {
     scenes[id] = { start: t, dur };
     let ct = t + (cs[0][2] ?? 0);
     for (const [key, d] of cs) { chunks.push({ a: ct, b: ct + d, key }); ct += d; }
@@ -60,7 +54,7 @@ export function buildTimeline(lang = 'es') {
   const add = (k, tt, o = {}) => sfx.push({ k, t: tt, ...o });
   chunks.forEach((c) => add('tick', c.a));
   // actos y barridos de color
-  ['web', 'lang', 'services', 'process', 'site', 'line', 'cta'].filter((id) => scenes[id]).forEach((id) => add('whoosh', S(id) - 0.2, { d: 0.45, up: true, vol: 0.5 }));
+  ['web', 'lang', 'services', 'process', 'line', 'cta'].forEach((id) => add('whoosh', S(id) - 0.2, { d: 0.45, up: true, vol: 0.5 }));
   // logo y línea lima
   add('logo', 0.1); add('draw', 1.0, { d: 1.4, f: 320 });
   // web
@@ -78,14 +72,22 @@ export function buildTimeline(lang = 'es') {
   // proceso
   [0, 1.0, 2.0, 3.1].forEach((o, i) => add('node', S('process') + o + 0.1, { f: [392, 440, 523, 659][i] }));
   add('draw', S('process'), { d: 4.0, f: 260 });
-  // sitio real
-  if (withSite) { add('whoosh', S('site') + 0.6, { d: 2.4, up: true, vol: 0.35 }); [0.4, 1.2, 2.0, 2.8].forEach((o) => add('tick', S('site') + o)); }
+  // más clics: cada elemento que aparece o se activa suena como un clic de interfaz
+  add('click', 1.0, { vol: 0.7 });                                   // la línea lima arranca
+  [0.2, 0.6, 0.8].forEach((o) => add('click', S('web') + o, { vol: 0.6, f: 2200 }));   // trazos del sitio
+  [0.05, 0.15, 0.25, 0.35].forEach((o) => add('click', S('brand') + o, { vol: 0.5, f: 1700 })); // muestras de color
+  [0, 1, 2, 3].forEach((i) => add('click', S('auto') + 0.667 * i, { vol: 0.7, f: 2600 }));       // nodos
+  add('click', S('lang') + 0.7, { vol: 0.9, f: 1500 });              // interruptor ES/EN
+  [0, 1, 2, 3].forEach((i) => add('click', S('services') + 0.1 + 0.25 * i, { vol: 0.55, f: 2000 })); // filas
+  chunks.filter((c) => ['svc1', 'svc2', 'svc3', 'svc4'].includes(c.key)).forEach((c) => add('click', c.a, { vol: 0.8, f: 1800 }));
+  chunks.filter((c) => ['p1', 'p2', 'p3', 'p4'].includes(c.key)).forEach((c) => add('click', c.a + 0.1, { vol: 0.9, f: 2100 })); // pasos
+  add('click', S('line') + 1.4, { vol: 0.8, f: 2400 });
   // línea que se endereza
   add('vib', S('line') + 0.05); add('chime', S('line') + 1.4, { f: 1046 });
   // cierre: símbolo, cursor, clic
   add('whoosh', S('cta') + 0.05, { d: 0.7, up: true, vol: 0.5 });
   add('whoosh', S('cta') + 0.45, { d: 0.5, up: false, vol: 0.25 });
-  add('click', S('cta') + 1.15); add('chime', S('cta') + 1.2, { f: 784 }); add('chime', S('cta') + 1.3, { f: 1175, vol: 0.8 }); add('chime', S('cta') + 1.4, { f: 1568, vol: 0.5 });
+  add('click', S('cta') + 1.15, { vol: 1.2 }); add('chime', S('cta') + 1.2, { f: 784 }); add('chime', S('cta') + 1.3, { f: 1175, vol: 0.8 }); add('chime', S('cta') + 1.4, { f: 1568, vol: 0.5 });
 
-  return { lang, withSite, duration, scenes, chunks, sfx, text: TEXT[lang] };
+  return { lang, duration, scenes, chunks, sfx, text: TEXT[lang] };
 }

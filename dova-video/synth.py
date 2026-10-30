@@ -67,7 +67,11 @@ for e in TL['sfx']:
         d = 1.4; tl = tt(d); prog = np.clip((tl - .25) / 1.1, 0, 1); f = 260 + 260 * prog + 40 * (1 - prog) * np.sin(2 * np.pi * 7 * tl)
         put(np.sin(2 * np.pi * np.cumsum(f) / SR) * env(d, .01, .2), t0, .2)
     elif k == 'chime': put(chime(e['f']), t0, .17 * e.get('vol', 1))
-    elif k == 'click': put(tick(2000, .06), t0, .4)
+    elif k == 'click':
+        f = e.get('f', 2000); v = e.get('vol', 1.0)
+        put(tick(f, .045), t0, .38 * v)                                   # chasquido agudo
+        kk = tt(.07); put(np.sin(2 * np.pi * (170 - 60 * kk / .07) * kk) * np.exp(-kk * 55), t0 + .004, .25 * v)  # golpe grave del botón
+        put(tick(f * .6, .03), t0 + .075, .12 * v)                         # rebote al soltar
 
 peak = max(np.abs(L).max(), np.abs(R).max()); g = 0.7 / peak
 st = np.stack([L * g, R * g], 1); pcm = (np.clip(st, -1, 1) * 32767).astype('<i2')

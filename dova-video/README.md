@@ -24,12 +24,6 @@ node render.mjs es v out/prueba.mp4   # una sola
 - `timeline.mjs`: textos y tiempos de cada escena y de cada sonido (una sola fuente para imagen y audio).
 - `scene.html`: las animaciones. `synth.py`: los sonidos. `vtt.mjs`: subtítulos.
 
-## Escena del sitio real (pendiente)
-
-Si existen `assets/site-es.png` y `assets/site-en.png` (capturas verticales del sitio de DOVA a 390 px de ancho,
-con `prefers-reduced-motion: reduce`), el video agrega una escena de 3,5 s con el sitio dentro de un celular.
-Sin esas capturas la escena se omite.
-
 ## Integrar en el sitio de DOVA
 
 1. Copiar `out/*-web.*`, `out/*-poster.jpg` y `out/*.vtt` a `public/assets/video/`.

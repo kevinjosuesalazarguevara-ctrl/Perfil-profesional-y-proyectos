@@ -1,0 +1,65 @@
+---
+// Bloque de video para el sitio de DOVA (Astro). Copiar los archivos de out/*-web.* a public/assets/video/.
+// Uso: <VideoShowcase lang="es" />   (lang: 'es' | 'en')
+interface Props { lang: 'es' | 'en' }
+const { lang } = Astro.props;
+const t = lang === 'es'
+  ? { title: 'DOVA en 25 segundos', play: 'Reproducir video', sound: 'Activar sonido', mute: 'Silenciar', note: 'Video de motion graphics, sin personas ni clientes.' }
+  : { title: 'DOVA in 25 seconds', play: 'Play video', sound: 'Turn sound on', mute: 'Mute', note: 'Motion graphics video, no people or clients shown.' };
+const base = '/assets/video';
+const variants = [
+  { id: 'v', cls: 'vid-v', w: 720, h: 1280 },
+  { id: 'h', cls: 'vid-h', w: 1280, h: 720 },
+];
+---
+<section class="video-showcase" aria-labelledby="vs-title">
+  <h2 id="vs-title">{t.title}</h2>
+  <div class="vs-frame" data-video-showcase data-sound-on={t.mute} data-sound-off={t.sound}>
+    {variants.map((v) => (
+      <video class={v.cls} width={v.w} height={v.h} muted loop playsinline preload="none" poster={`${base}/dova-${lang}-${v.id}-poster.jpg`} aria-label={t.title}>
+        <source src={`${base}/dova-${lang}-${v.id}-web.webm`} type="video/webm" />
+        <source src={`${base}/dova-${lang}-${v.id}-web.mp4`} type="video/mp4" />
+        <track kind="subtitles" src={`${base}/dova-${lang}.vtt`} srclang={lang} label={lang === 'es' ? 'Español' : 'English'} />
+      </video>
+    ))}
+    <button type="button" class="vs-play" data-vs-play>{t.play}</button>
+    <button type="button" class="vs-sound" data-vs-sound aria-pressed="false">{t.sound}</button>
+  </div>
+  <p class="vs-note">{t.note}</p>
+</section>
+
+<style>
+  .video-showcase { padding-block: clamp(3rem, 8vw, 6rem); }
+  .vs-frame { position: relative; margin-inline: auto; width: min(100%, 960px); background: #0B0B0B; border-radius: 16px; overflow: hidden; }
+  .vs-frame video { display: block; width: 100%; height: auto; }
+  .vid-v { max-width: 420px; margin-inline: auto; }
+  .vid-h { display: none; }
+  @media (min-width: 900px) { .vid-v { display: none; } .vid-h { display: block; } }
+  .vs-play, .vs-sound { position: absolute; font: 600 1rem 'Inter Variable', Inter, sans-serif; border: 0; cursor: pointer; border-radius: 999px; padding: .75rem 1.25rem; background: #C7FF3D; color: #0B0B0B; }
+  .vs-play { inset: auto auto 1rem 1rem; }
+  .vs-sound { inset: auto 1rem 1rem auto; background: #1E1E1E; color: #fff; }
+  .vs-playing .vs-play { display: none; }
+  .vs-note { color: #4F4F4F; font-size: .9rem; margin-top: .75rem; text-align: center; }
+</style>
+
+<script>
+  // Reproduce al entrar en pantalla (sin sonido) salvo que el visitante pida menos movimiento.
+  const frame = document.querySelector<HTMLElement>('[data-video-showcase]');
+  if (frame) {
+    const videos = [...frame.querySelectorAll<HTMLVideoElement>('video')];
+    const visible = () => videos.find((v) => v.offsetParent !== null) ?? videos[0];
+    const play = () => { const v = visible(); v.preload = 'auto'; v.play().then(() => frame.classList.add('vs-playing')).catch(() => {}); };
+    const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (!reduce && 'IntersectionObserver' in window) {
+      new IntersectionObserver((es, io) => es.forEach((e) => { if (e.isIntersecting) { play(); io.disconnect(); } }), { threshold: 0.4 }).observe(frame);
+    }
+    frame.querySelector('[data-vs-play]')?.addEventListener('click', play);
+    const sound = frame.querySelector<HTMLButtonElement>('[data-vs-sound]');
+    sound?.addEventListener('click', () => {
+      const on = sound.getAttribute('aria-pressed') !== 'true';
+      videos.forEach((v) => { v.muted = !on; });
+      sound.setAttribute('aria-pressed', String(on));
+      sound.textContent = on ? frame.dataset.soundOn ?? '' : frame.dataset.soundOff ?? '';
+    });
+  }
+</script>

@@ -1,0 +1,9 @@
+node_modules
+_snap.mjs
+timeline-*.json
+/dova-*-sfx.wav
+/dova-*-poster.jpg
+out/dova-es-v.mp4
+out/dova-es-h.mp4
+out/dova-en-v.mp4
+out/dova-en-h.mp4

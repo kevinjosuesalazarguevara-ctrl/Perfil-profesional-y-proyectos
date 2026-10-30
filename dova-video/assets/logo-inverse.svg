@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 222 48" width="222" height="48" role="img" aria-labelledby="t">
+  <title id="t">DOVA</title>
+  <path fill="#FFFFFF" fill-rule="evenodd" d="M0 0H18C34 0 44 11 44 24S34 48 18 48H0ZM10 10V38H18C28 38 34 32 34 24S28 10 18 10Z"/>
+  <path fill="#FFFFFF" fill-rule="evenodd" d="M78 0A24 24 0 1 1 78 48A24 24 0 1 1 78 0ZM78 10A14 14 0 1 0 78 38A14 14 0 1 0 78 10Z"/>
+  <path fill="#FFFFFF" d="M112 0H124L138 32L152 0H164L143 48H133Z"/>
+  <path fill="#FFFFFF" d="M191 0H201L215 32H203L196 16L182 48H170Z"/>
+  <path fill="#C7FF3D" d="M203 32H215L222 48H210Z"/>
+</svg>

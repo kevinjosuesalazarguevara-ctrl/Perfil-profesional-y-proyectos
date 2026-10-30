@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <title>DOVA</title>
+  <rect width="64" height="64" rx="14" fill="#0B0B0B"/>
+  <g transform="translate(8 8) scale(.75)">
+    <path fill="#C7FF3D" d="M20 17L32 47L44 17Z"/>
+    <path fill="#FFFFFF" fill-rule="evenodd" d="M6 4H30C48.700 4 58 16 58 32S48.700 60 30 60H6ZM20 17L32 47L44 17Z"/>
+  </g>
+</svg>

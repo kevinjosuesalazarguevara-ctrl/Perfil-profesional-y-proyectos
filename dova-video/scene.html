@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>DOVA video 15s</title>
+<style>
+  @font-face { font-family: 'Space Grotesk'; src: url("fonts/space-grotesk-latin-wght-normal.woff2") format("woff2"); font-weight: 300 700; }
+  @font-face { font-family: Inter; src: url("fonts/inter-latin-wght-normal.woff2") format("woff2"); font-weight: 100 900; }
+  :root { --ink: #0B0B0B; --graphite: #1E1E1E; --lime: #C7FF3D; --white: #FFFFFF; --muted: #A1A1A1; }
+  * { margin: 0; box-sizing: border-box; }
+  html, body { width: 1080px; height: 1920px; background: var(--ink); overflow: hidden; }
+  #stage { position: relative; width: 1080px; height: 1920px; overflow: hidden; }
+  svg#art { position: absolute; inset: 0; }
+  #cap { position: absolute; left: 70px; right: 70px; top: 1180px; height: 420px; display: flex; align-items: center; justify-content: center; text-align: center; }
+  #cap .line { font: 700 112px/1.05 'Space Grotesk', sans-serif; letter-spacing: -0.03em; color: var(--white); text-wrap: balance; }
+  #cap .w { display: inline-block; }
+  #cap .on { color: var(--lime); }
+  #foot { position: absolute; left: 0; right: 0; bottom: 150px; text-align: center; font: 500 34px Inter, sans-serif; color: var(--muted); letter-spacing: .02em; }
+</style>
+</head>
+<body>
+<div id="stage">
+  <svg id="art" viewBox="0 0 1080 1920" width="1080" height="1920"></svg>
+  <div id="cap"><div class="line" id="line"></div></div>
+  <div id="foot">Estudio digital bilingüe</div>
+</div>
+<script>
+const NS = 'http://www.w3.org/2000/svg';
+const svg = document.getElementById('art');
+const clamp = (x, a = 0, b = 1) => Math.min(b, Math.max(a, x));
+const ease = (x) => 1 - Math.pow(1 - clamp(x), 3);
+const spring = (x) => { x = clamp(x); return 1 - Math.pow(1 - x, 3) * Math.cos(x * 9) ; };
+const seg = (t, a, b) => clamp((t - a) / (b - a));
+const win = (t, a, b, f = 0.25) => Math.min(ease(seg(t, a, a + f)), 1 - ease(seg(t, b - f, b)));
+
+function el(tag, attrs = {}, parent = svg) {
+  const n = document.createElementNS(NS, tag);
+  for (const k in attrs) n.setAttribute(k, attrs[k]);
+  parent.appendChild(n);
+  return n;
+}
+
+// Fondo: rejilla fina del sistema de marca
+const grid = el('g', { stroke: '#1E1E1E', 'stroke-width': 2 });
+for (let x = -180; x <= 1260; x += 90) el('line', { x1: x, y1: -180, x2: x, y2: 2100 }, grid);
+for (let y = -180; y <= 2100; y += 90) el('line', { x1: -180, y1: y, x2: 1260, y2: y }, grid);
+
+// Escena A: logotipo
+const gLogo = el('g');
+const logoImg = el('image', { href: 'assets/logo-inverse.svg', x: 180, y: 470, width: 720, height: 155 }, gLogo);
+const logoLine = el('rect', { x: 180, y: 680, width: 0, height: 10, fill: '#C7FF3D' }, gLogo);
+
+// Escena B1: sitio web
+const gWeb = el('g');
+el('rect', { x: 240, y: 380, width: 600, height: 440, rx: 28, fill: 'none', stroke: '#fff', 'stroke-width': 6 }, gWeb);
+el('line', { x1: 240, y1: 460, x2: 840, y2: 460, stroke: '#fff', 'stroke-width': 6 }, gWeb);
+[290, 340, 390].forEach((cx) => el('circle', { cx, cy: 420, r: 12, fill: '#fff' }, gWeb));
+const webLime = el('rect', { x: 290, y: 520, width: 0, height: 150, rx: 16, fill: '#C7FF3D' }, gWeb);
+const webL1 = el('rect', { x: 290, y: 710, width: 0, height: 20, rx: 10, fill: '#fff' }, gWeb);
+const webL2 = el('rect', { x: 290, y: 755, width: 0, height: 20, rx: 10, fill: '#A1A1A1' }, gWeb);
+
+// Escena B2: marca (paleta)
+const gBrand = el('g');
+const swatches = [['#C7FF3D', 'none'], ['#FFFFFF', 'none'], ['#1E1E1E', '#fff'], ['#A1A1A1', 'none']].map(([fill, stroke], i) =>
+  el('circle', { cx: 225 + i * 210, cy: 600, r: 0, fill, stroke, 'stroke-width': 6 }, gBrand));
+
+// Escena B3: automatización (nodos conectados)
+const gAuto = el('g');
+const nodes = [[240, 760], [540, 400], [840, 760]];
+const tri = el('polygon', { points: nodes.map((p) => p.join(',')).join(' '), fill: 'none', stroke: '#fff', 'stroke-width': 6, 'stroke-linejoin': 'round' }, gAuto);
+nodes.forEach(([cx, cy]) => el('circle', { cx, cy, r: 42, fill: '#0B0B0B', stroke: '#fff', 'stroke-width': 6 }, gAuto));
+const runner = el('circle', { r: 26, fill: '#C7FF3D' }, gAuto);
+function perimeter(u) {
+  u = ((u % 1) + 1) % 1; const s = u * 3; const i = Math.floor(s); const f = s - i;
+  const a = nodes[i], b = nodes[(i + 1) % 3];
+  return [a[0] + (b[0] - a[0]) * f, a[1] + (b[1] - a[1]) * f];
+}
+
+// Escena C: ES / EN
+const gLang = el('g');
+el('rect', { x: 270, y: 520, width: 540, height: 170, rx: 85, fill: '#1E1E1E' }, gLang);
+const thumb = el('rect', { x: 282, y: 532, width: 260, height: 146, rx: 73, fill: '#C7FF3D' }, gLang);
+const tES = el('text', { x: 412, y: 628, 'text-anchor': 'middle', 'font-family': 'Space Grotesk', 'font-weight': 700, 'font-size': 76, fill: '#0B0B0B' }, gLang); tES.textContent = 'ES';
+const tEN = el('text', { x: 678, y: 628, 'text-anchor': 'middle', 'font-family': 'Space Grotesk', 'font-weight': 700, 'font-size': 76, fill: '#fff' }, gLang); tEN.textContent = 'EN';
+
+// Escena D: menos vueltas (línea que se endereza)
+const gLine = el('g');
+const path = el('polyline', { fill: 'none', stroke: '#C7FF3D', 'stroke-width': 16, 'stroke-linecap': 'round', 'stroke-linejoin': 'round' }, gLine);
+const dot = el('circle', { r: 26, fill: '#fff' }, gLine);
+const N = 90;
+function drawLine(p, reveal) {
+  const pts = [];
+  const shown = Math.floor(N * reveal);
+  for (let i = 0; i <= shown; i++) {
+    const x = 110 + (860 * i) / N;
+    const wob = Math.sin(i * 0.55) * 120 * (1 - p) * (0.4 + 0.6 * Math.sin((i / N) * Math.PI));
+    const loop = Math.cos(i * 0.9) * 40 * (1 - p);
+    pts.push(`${x.toFixed(1)},${(600 + wob + loop).toFixed(1)}`);
+  }
+  path.setAttribute('points', pts.join(' '));
+  const last = pts[pts.length - 1].split(',');
+  dot.setAttribute('cx', last[0]); dot.setAttribute('cy', last[1]);
+}
+
+// Escena E: cierre
+const gEnd = el('g');
+const sym = el('image', { href: 'assets/logo-symbol-inverse.svg', x: 380, y: 330, width: 320, height: 320 }, gEnd);
+const pill = el('g', {}, gEnd);
+el('rect', { x: 250, y: 740, width: 580, height: 150, rx: 75, fill: '#C7FF3D' }, pill);
+const pt = el('text', { x: 540, y: 838, 'text-anchor': 'middle', 'font-family': 'Space Grotesk', 'font-weight': 700, 'font-size': 66, fill: '#0B0B0B' }, pill); pt.textContent = 'Hablemos';
+
+// Subtítulos estilo UGC: texto del guion por fragmentos con palabra activa en lima
+const CHUNKS = [
+  [0.3, 1.9, 'Hola, somos DOVA'],
+  [1.9, 3.2, 'un estudio digital'],
+  [3.2, 4.4, 'de Costa Rica.'],
+  [4.4, 6.2, 'Diseñamos tu sitio web'],
+  [6.2, 7.2, 'y tu marca,'],
+  [7.2, 8.4, 'y automatizamos'],
+  [8.4, 9.5, 'lo repetitivo,'],
+  [9.5, 11.2, 'en español e inglés.'],
+  [11.2, 12.2, 'Menos vueltas,'],
+  [12.2, 13.2, 'más posibilidades.'],
+  [13.2, 15.0, 'Cuéntanos tu proyecto.'],
+];
+const lineEl = document.getElementById('line');
+let shownChunk = -1;
+function setCaption(t) {
+  const idx = CHUNKS.findIndex(([a, b]) => t >= a && t < b);
+  if (idx !== shownChunk) {
+    shownChunk = idx;
+    lineEl.innerHTML = idx < 0 ? '' : CHUNKS[idx][2].split(' ').map((w) => `<span class="w">${w}</span>`).join(' ');
+  }
+  if (idx < 0) { lineEl.style.opacity = 0; return; }
+  const [a, b] = CHUNKS[idx];
+  const words = lineEl.querySelectorAll('.w');
+  const p = (t - a) / (b - a);
+  words.forEach((w, i) => w.classList.toggle('on', p >= (i / words.length) * 0.9));
+  const enter = ease(seg(t, a, a + 0.18));
+  lineEl.style.opacity = Math.min(enter, 1 - seg(t, b - 0.06, b));
+  lineEl.style.transform = `translateY(${(1 - enter) * 36}px) scale(${0.94 + 0.06 * enter})`;
+}
+
+window.render = function (t) {
+  // rejilla en deriva lenta
+  grid.setAttribute('transform', `translate(${-(t * 12) % 90} ${(t * 18) % 90})`);
+
+  // A
+  gLogo.setAttribute('opacity', win(t, 0, 4.4, 0.4));
+  logoImg.setAttribute('transform', `translate(0 ${(1 - ease(seg(t, 0.1, 0.9))) * 60})`);
+  logoLine.setAttribute('width', 720 * ease(seg(t, 1.0, 2.4)));
+
+  // B1 web
+  gWeb.setAttribute('opacity', win(t, 4.4, 6.2));
+  webLime.setAttribute('width', 500 * ease(seg(t, 4.6, 5.3)));
+  webL1.setAttribute('width', 360 * ease(seg(t, 5.0, 5.6)));
+  webL2.setAttribute('width', 260 * ease(seg(t, 5.2, 5.8)));
+
+  // B2 marca
+  gBrand.setAttribute('opacity', win(t, 6.2, 7.2, 0.15));
+  swatches.forEach((c, i) => c.setAttribute('r', 90 * spring(seg(t, 6.25 + i * 0.1, 6.75 + i * 0.1))));
+
+  // B3 automatización
+  gAuto.setAttribute('opacity', win(t, 7.2, 9.5, 0.2));
+  const run = perimeter((t - 7.2) * 0.5);
+  runner.setAttribute('cx', run[0]); runner.setAttribute('cy', run[1]);
+
+  // C idioma
+  gLang.setAttribute('opacity', win(t, 9.5, 11.2));
+  const m = ease(seg(t, 10.2, 10.7));
+  thumb.setAttribute('x', 282 + 246 * m);
+  tES.setAttribute('fill', m < 0.5 ? '#0B0B0B' : '#fff');
+  tEN.setAttribute('fill', m < 0.5 ? '#fff' : '#0B0B0B');
+
+  // D línea
+  gLine.setAttribute('opacity', win(t, 11.2, 13.2, 0.2));
+  drawLine(ease(seg(t, 11.5, 12.6)), ease(seg(t, 11.25, 11.9)));
+
+  // E cierre
+  gEnd.setAttribute('opacity', win(t, 13.2, 15.01, 0.3));
+  const pulse = 1 + 0.03 * Math.sin((t - 13.6) * 6) * seg(t, 13.6, 13.7);
+  pill.setAttribute('transform', `translate(540 815) scale(${pulse}) translate(-540 -815)`);
+  sym.setAttribute('transform', `translate(0 ${(1 - ease(seg(t, 13.25, 13.9))) * 50})`);
+
+  setCaption(t);
+  document.getElementById('foot').style.opacity = win(t, 0.4, 14.8, 0.5) * 0.9;
+};
+window.render(0);
+</script>
+</body>
+</html>

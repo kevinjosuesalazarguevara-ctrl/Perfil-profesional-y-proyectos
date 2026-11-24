@@ -89,6 +89,7 @@ More in [`proyectos/claude-code`](./proyectos/claude-code). Hermes case study: [
 | 🔄 In progress | SC-300: Identity and Access Administrator Associate |
 | 🔄 In progress | AZ-104: Azure Administrator Associate |
 | 📅 Planned | SC-200: Security Operations Analyst Associate |
+| ✅ | Claude Certified Associate – Foundations (CCA-F) — Anthropic (2026) |
 | ✅ | SC-900: Security, Compliance, and Identity Fundamentals |
 | ✅ | AZ-900: Azure Fundamentals |
 | ✅ | MS-900: Microsoft 365 Fundamentals |

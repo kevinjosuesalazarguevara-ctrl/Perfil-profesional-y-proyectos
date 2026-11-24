@@ -224,6 +224,9 @@
   .cred.now { border-color: var(--green-deep); background: linear-gradient(180deg, rgba(79, 217, 143, .08), transparent 70%), var(--surface); }
   .cred.now .state { background: var(--green); color: var(--on-green); border-color: transparent; }
   .cred.now .code { color: var(--green); }
+  .cred.feat { border-color: var(--green-deep); }
+  .cred.feat .code { color: var(--green); }
+  .cred.feat .state { border-color: var(--green-deep); color: var(--green); }
   .cred h3 { font-size: 1rem; line-height: 1.35; }
   .cred p { color: var(--muted); font-size: .88rem; }
   .cred .issuer { display: flex; align-items: center; gap: 8px; margin-top: auto; padding-top: 10px; font: 500 .78rem var(--mono); color: var(--dim); }
@@ -437,7 +440,7 @@
     <div class="stats reveal" style="--i:1">
       <div class="stat"><b data-count="3">3</b><span class="es">años de experiencia profesional, en la industria desde 2022</span><span class="en">years of professional experience, in the industry since 2022</span></div>
       <div class="stat"><b data-count="40" data-suffix="+">40+</b><span class="es">casos empresariales al mes en Entra ID</span><span class="en">enterprise cases a month on Entra ID</span></div>
-      <div class="stat"><b data-count="9">9</b><span class="es">certificaciones obtenidas: Microsoft, Anthropic, Cisco y QA</span><span class="en">certifications earned: Microsoft, Anthropic, Cisco and QA</span></div>
+      <div class="stat"><b data-count="10">10</b><span class="es">certificaciones obtenidas: Microsoft, Anthropic, Cisco y QA</span><span class="en">certifications earned: Microsoft, Anthropic, Cisco and QA</span></div>
       <div class="stat"><b>C1</b><span class="es">inglés profesional, español nativo</span><span class="en">professional English, native Spanish</span></div>
     </div>
   </div>
@@ -545,51 +548,51 @@
   <div class="wrap">
     <h2 class="reveal"><span class="es">Credenciales</span><span class="en">Credentials</span></h2>
     <div class="creds">
-      <article class="cred now reveal">
+      <article class="cred feat reveal">
+        <div class="top"><span class="code">CCA-F</span><span class="state"><span class="es">Obtenida 2026</span><span class="en">Earned 2026</span></span></div>
+        <h3>Claude Certified Associate, Foundations</h3>
+        <p><span class="es">Certificación oficial de Anthropic sobre el uso de Claude en el trabajo, verificable en Credly.</span><span class="en">Anthropic's official certification on using Claude at work, verifiable on Credly.</span></p>
+        <span class="issuer"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.3041 3.541h-3.6718l6.696 16.918H24Zm-10.6082 0L0 20.459h3.7442l1.3693-3.5527h7.0052l1.3693 3.5528h3.7442L10.5363 3.5409Zm-.3712 10.2232 2.2914-5.9456 2.2914 5.9456Z"/></svg>Anthropic</span>
+      </article>
+      <article class="cred now reveal" style="--i:1">
         <div class="top"><span class="code">SC-300</span><span class="state"><span class="es">En curso</span><span class="en">In progress</span></span></div>
         <h3>Identity and Access Administrator Associate</h3>
         <p><span class="es">Gobierno de identidades, acceso condicional y protección de identidad en Entra ID.</span><span class="en">Identity governance, Conditional Access and identity protection in Entra ID.</span></p>
         <span class="issuer">Microsoft</span>
       </article>
-      <article class="cred now reveal" style="--i:1">
+      <article class="cred now reveal" style="--i:2">
         <div class="top"><span class="code">AZ-104</span><span class="state"><span class="es">En curso</span><span class="en">In progress</span></span></div>
         <h3>Azure Administrator Associate</h3>
         <p><span class="es">Administración de identidades, cómputo, redes y almacenamiento en Azure.</span><span class="en">Administration of identity, compute, networking and storage in Azure.</span></p>
         <span class="issuer">Microsoft</span>
       </article>
-      <article class="cred reveal" style="--i:2">
-        <div class="top"><span class="code">AI Fluency</span><span class="state">2025</span></div>
-        <h3>Framework and Foundations</h3>
-        <p><span class="es">Uso responsable y efectivo de IA generativa en el trabajo.</span><span class="en">Responsible and effective use of generative AI at work.</span></p>
+      <article class="cred reveal">
+        <div class="top"><span class="code">Claude 101</span><span class="state">2025 · 2026</span></div>
+        <h3>Claude 101, AI Fluency: Framework and Foundations</h3>
+        <p><span class="es">Uso responsable de IA generativa y flujos de trabajo prácticos con Claude.</span><span class="en">Responsible use of generative AI and practical Claude workflows.</span></p>
         <span class="issuer"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.3041 3.541h-3.6718l6.696 16.918H24Zm-10.6082 0L0 20.459h3.7442l1.3693-3.5527h7.0052l1.3693 3.5528h3.7442L10.5363 3.5409Zm-.3712 10.2232 2.2914-5.9456 2.2914 5.9456Z"/></svg>Anthropic Academy</span>
       </article>
-      <article class="cred reveal">
-        <div class="top"><span class="code">Claude 101</span><span class="state">2026</span></div>
-        <h3><span class="es">Fundamentos de Claude</span><span class="en">Claude fundamentals</span></h3>
-        <p><span class="es">Flujos de trabajo prácticos con Claude para productividad diaria.</span><span class="en">Practical Claude workflows for everyday productivity.</span></p>
-        <span class="issuer"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.3041 3.541h-3.6718l6.696 16.918H24Zm-10.6082 0L0 20.459h3.7442l1.3693-3.5527h7.0052l1.3693 3.5528h3.7442L10.5363 3.5409Zm-.3712 10.2232 2.2914-5.9456 2.2914 5.9456Z"/></svg>Anthropic Academy</span>
-      </article>
-      <article class="cred reveal">
+      <article class="cred reveal" style="--i:1">
         <div class="top"><span class="code">SC-900</span><span class="state"><span class="es">Obtenida</span><span class="en">Earned</span></span></div>
         <h3>Security, Compliance, and Identity Fundamentals</h3>
         <span class="issuer">Microsoft</span>
       </article>
-      <article class="cred reveal" style="--i:1">
+      <article class="cred reveal" style="--i:2">
         <div class="top"><span class="code">AZ-900</span><span class="state"><span class="es">Obtenida</span><span class="en">Earned</span></span></div>
         <h3>Azure Fundamentals</h3>
         <span class="issuer">Microsoft</span>
       </article>
-      <article class="cred reveal" style="--i:2">
+      <article class="cred reveal">
         <div class="top"><span class="code">MS-900 / MB-910</span><span class="state"><span class="es">Obtenidas</span><span class="en">Earned</span></span></div>
         <h3>Microsoft 365 Fundamentals, Dynamics 365 Fundamentals (CRM)</h3>
         <span class="issuer">Microsoft</span>
       </article>
-      <article class="cred reveal">
+      <article class="cred reveal" style="--i:1">
         <div class="top"><span class="code">Unified Support</span><span class="state"><span class="es">Obtenida</span><span class="en">Earned</span></span></div>
         <h3>Providing Best in Class Unified Support for Enterprise Customers</h3>
         <span class="issuer">QA Ltd</span>
       </article>
-      <article class="cred reveal" style="--i:1">
+      <article class="cred reveal" style="--i:2">
         <div class="top"><span class="code">Cisco</span><span class="state"><span class="es">Obtenidas</span><span class="en">Earned</span></span></div>
         <h3>Introduction to IoT, IT Essentials: PC Hardware and Software</h3>
         <span class="issuer">Cisco Networking Academy</span>

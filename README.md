@@ -101,7 +101,7 @@ More in [`proyectos/claude-code`](./proyectos/claude-code). Hermes case study: [
 
 ## 🏫 Education
 
-- **Bachelor's Degree in Computer Systems Engineering** — Universidad Fidélitas *(2023 – Present)*
+- **Data Science** — Universidad Fidélitas *(2026 – Present)*
 - **Associate Degree in Electronics** — CTP Don Bosco *(2020 – 2022)*
 
 ## 🌐 Languages
